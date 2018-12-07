@@ -1,24 +1,27 @@
 #' install
 #' @export
-install <- function(x, ...) {
-  os <- get("os", envir = .installjavaEnv)
+install <- function() {
+  os <- get("os", envir = .correttorEnv)
   inst(os)
 }
 
-
-inst <- function(x, ...){
+inst <- function(os){
   UseMethod("inst")
 }
 
-inst.x86 <- function(os) {
-  print("32bit system not support now.")
+inst.Windowsx86 <- function(os) {
+  print("32 bits system is not support now.")
 }
 
-inst.Windows <- function(os) {
+inst.macosx86 <- function(os) {
+  print("32 bits system is not support now.")
+}
+
+inst.Windowsx64 <- function(os) {
   print("windows!")
 }
 
-inst.macos <- function(os) {
+inst.macosx64 <- function(os) {
   print("mac!")
 }
 

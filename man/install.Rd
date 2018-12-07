@@ -4,7 +4,7 @@
 \alias{install}
 \title{install}
 \usage{
-install(x, ...)
+install()
 }
 \description{
 install
