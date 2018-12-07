@@ -10,3 +10,5 @@ Description: Provide Java(Amazon Corretto) install function for all os.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/mrchypark/installjava
+BugReports: https://github.com/mrchypark/installjava/issues
