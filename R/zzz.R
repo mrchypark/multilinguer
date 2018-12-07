@@ -2,7 +2,11 @@
 
 .onLoad <- function(libname, pkgname) {
   os <- "os_class"
-  class(os) <- as.character(Sys.info()["sysname"])
+  bits <- Sys.info()["machine"]
+  if(bits == "x86-64") {
+    bits <- "x64"
+  }
+  class(os) <- c(Sys.info()["sysname"],as.character(bits))
   assign("os", os, envir = .installjavaEnv)
 }
 

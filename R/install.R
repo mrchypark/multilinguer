@@ -10,6 +10,9 @@ inst <- function(x, ...){
   UseMethod("inst")
 }
 
+inst.x86 <- function(os) {
+  print("32bit system not support now.")
+}
 
 inst.Windows <- function(os) {
   print("windows!")
