@@ -30,3 +30,8 @@ inst.Darwinx64 <- function(os) {
 
   print("mac!")
 }
+
+inst.Linuxx64 <- function(os) {
+  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-linux-x64.tar.gz"
+  print("linux!")
+}
