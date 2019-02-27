@@ -1,16 +1,16 @@
-Package: correttor
-Title: Install Amazon Corretto
+Package: multilinguer
+Title: Install Amazon Corretto and Anaconda for All OS
 Version: 0.0.0.9000
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
-Description: Provide install function of Amazon Corretto to use rJava for all os.
+Description: Provide install function of Amazon Corretto to use rJava and Anaconda to use reticulate for all os.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/mrchypark/installjava
-BugReports: https://github.com/mrchypark/installjava/issues
+URL: https://github.com/mrchypark/multilinguer
+BugReports: https://github.com/mrchypark/multilinguer/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0

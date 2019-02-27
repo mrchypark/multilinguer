@@ -1,7 +1,7 @@
 #' install
 #' @export
 install <- function() {
-  os <- get("os", envir = .correttorEnv)
+  os <- get("os", envir = .mlgrEnv)
   inst(os)
 }
 
@@ -10,11 +10,8 @@ inst <- function(os){
 }
 
 inst.Windowsx86 <- function(os) {
-  print("32 bits system is not support now.")
-}
-
-inst.macosx86 <- function(os) {
-  print("32 bits system is not support now.")
+  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x86-jdk.zip"
+  print("windows 32bit!")
 }
 
 #' importFrom xml2 read_html
@@ -22,16 +19,14 @@ inst.macosx86 <- function(os) {
 inst.Windowsx64 <- function(os) {
   # tar <- "https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/windows-7-install.html"
   # read_html(tar) %>% html_nodes("a") %>% html_attr("href") %>% grep("msi",.,value = T) -> down_path
-  down_path <- "https://d3pxv6yz143wms.cloudfront.net/Amazon-Corretto-preview-8u192.msi"
+  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x64-jdk.zip"
   # download.file(down_path, destfile = "Amazon-Corretto-preview-8u192.msi",  mode = 'wb')
   # shell("Amazon-Corretto-preview-8u192.msi")
-  print("windows!")
+  print("windows 64bit!")
 }
 
-inst.macosx64 <- function(os) {
-  # tar <- "https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macos-install.html"
-  # read_html(tar) %>% html_nodes("a") %>% html_attr("href") %>% grep("msi",.,value = T) -> down_path
-  down_path <- "https://d3pxv6yz143wms.cloudfront.net/corretto-jdk-8u192-macosx-x64.pkg"
+inst.Darwinx64 <- function(os) {
+  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-macosx-x64.tar.gz"
 
   print("mac!")
 }
