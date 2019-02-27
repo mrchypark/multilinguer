@@ -14,7 +14,7 @@ inst.Windowsx86 <- function(os) {
   print("windows 32bit!")
 }
 
-#' importFrom xml2 read_html
+#' importFrom xml2 read_html html_nodes
 #' importFrom rvest html_nodes html_attr
 inst.Windowsx64 <- function(os) {
   # tar <- "https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/windows-7-install.html"
