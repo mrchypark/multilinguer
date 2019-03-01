@@ -12,11 +12,11 @@ remotes::install_github("mrchypark/multilinguer")
 
 ## Example
 
-Package has `java()` and `python()` function.
+Package has `set()` function.
 
 ``` r
 library(multilinguer)
-java()
-python()
+set("java")
+set_java()
 ```
 
