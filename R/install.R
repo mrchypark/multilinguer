@@ -30,7 +30,11 @@ install_corretto <- function() {
   }
   env_f <- c(env_f, env_text)
   writeLines(env_f, fs::path_home_r(".Renviron"))
-  rstudioapi::restartSession()
+  if (rstudioapi::isAvailable()) {
+    rstudioapi::restartSession()
+  } else {
+    message("Java installation is done. Please restart session.")
+  }
 }
 
 install_anaconda <- function(os) {
