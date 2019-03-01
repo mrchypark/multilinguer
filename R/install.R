@@ -15,6 +15,7 @@ install_corretto <- function() {
   os <- get("os", envir = .mlgrEnv)
   temp_dir <- fs::dir_create(fs::file_temp())
   temp_dest <- fs::path(temp_dir,"jdk", ext = "zip")
+  jdk_dir <- fs::dir_create(fs::path(fs::path_home(),"mlrjdk"))
   jdk_path <- fs::path(fs::path_home(),"mlrjdk")
 
   corretto_down(os, destfile = temp_dest)
@@ -24,6 +25,9 @@ install_corretto <- function() {
 
   path <- fs::dir_ls(jdk_path)
   env_text <- paste0("JAVA_HOME = ", path)
+  if (!fs::file_exists(fs::path_home_r(".Renviron"))) {
+    env_cre <- fs::file_create(fs::path_home_r(".Renviron"))
+  }
   env_f <- readLines(fs::path_home_r(".Renviron"))
   if (any(grepl("JAVA_HOME", env_f))) {
     env_f <- env_f[-grep("JAVA_HOME", env_f)]
@@ -59,10 +63,4 @@ install_anaconda.Darwinx64 <- function(os) {
     "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-macosx-x64.tar.gz"
 
   print("mac!")
-}
-
-install_anaconda.Linuxx64 <- function(os) {
-  down_path <-
-    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-linux-x64.tar.gz"
-  print("linux!")
 }

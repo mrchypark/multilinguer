@@ -1,12 +1,12 @@
-#' remove
+#' clean remove java or python from multilinguer package
 #'
 #' @param what java or python. No defualt.
 #' @export
-remove <- function(what) {
+clean <- function(what) {
   os <- get("os", envir = .mlgrEnv)
   switch(what,
-         java = remove_corretto(os),
-         python = remove_anaconda(os)
+         java = clean_corretto(os),
+         python = clean_anaconda(os)
   )
 }
 
@@ -34,7 +34,3 @@ remove_anaconda.Darwinx64 <- function(os) {
   print("mac!")
 }
 
-remove_anaconda.Linuxx64 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-linux-x64.tar.gz"
-  print("linux!")
-}
