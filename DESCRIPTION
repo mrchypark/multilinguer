@@ -13,6 +13,7 @@ LazyData: true
 URL: https://github.com/mrchypark/multilinguer
 BugReports: https://github.com/mrchypark/multilinguer/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Imports: 
-    fs
+    fs,
+    rstudioapi

@@ -1,75 +1,64 @@
 #' install
+#'
+#' @param what java or python. No defualt.
 #' @export
 install <- function(what) {
-  os <- get("os", envir = .mlgrEnv)
   switch(what,
-    java = install_corretto(os),
-    python = install_anaconda(os)
-  )
+         java = install_corretto(),
+         python = install_anaconda())
 }
 
-install_corretto <- function(os){
-  UseMethod("install_corretto")
-}
+#' @importFrom utils download.file unzip
+#' @importFrom fs path path_temp path_home path_home_r file_delete
+#' @importFrom rstudioapi restartSession
+install_corretto <- function() {
+  os <- get("os", envir = .mlgrEnv)
+  temp_dir <- fs::dir_create(fs::file_temp())
+  temp_dest <- fs::path(temp_dir,"jdk", ext = "zip")
+  jdk_path <- fs::path(fs::path_home(),"mlrjdk")
 
-install_corretto.Windowsx86 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x86-jdk.zip"
-  print("windows 32bit!")
-}
+  corretto_down(os, destfile = temp_dest)
+  uz <- uncorretto(os)
+  uzdone <- uz(temp_dest, exdir = jdk_path)
+  rmdone <- fs::file_delete(temp_dest)
 
-install_corretto.Windowsx64 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x64-jdk.zip"
-  download.file(down_path, destfile = "aws_jdk.zip",  mode = 'wb')
-  unzip("aws_jdk.zip", exdir = "c://java")
-  rmdone <- file.remove("aws_jdk.zip")
-  path <- fs::dir_ls("c://java")
+  path <- fs::dir_ls(jdk_path)
   env_text <- paste0("JAVA_HOME = ", path)
   env_f <- readLines(fs::path_home_r(".Renviron"))
   if (any(grepl("JAVA_HOME", env_f))) {
     env_f <- env_f[-grep("JAVA_HOME", env_f)]
   }
   env_f <- c(env_f, env_text)
-  writeLines(evn_f, fs::path_home_r(".Renviron"))
+  writeLines(env_f, fs::path_home_r(".Renviron"))
+  rstudioapi::restartSession()
 }
 
-install_corretto.Darwinx64 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-macosx-x64.tar.gz"
-
-  print("mac!")
-}
-
-install_corretto.Linuxx64 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-linux-x64.tar.gz"
-  print("linux!")
-}
-
-install_anaconda <- function(os){
+install_anaconda <- function(os) {
   UseMethod("install_anaconda")
 }
 
 install_anaconda.Windowsx86 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x86-jdk.zip"
+  down_path <-
+    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x86-jdk.zip"
   print("windows 32bit!")
 }
 
-#' importFrom xml2 read_html html_nodes
-#' importFrom rvest html_nodes html_attr
 install_anaconda.Windowsx64 <- function(os) {
-  # tar <- "https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/windows-7-install.html"
-  # read_html(tar) %>% html_nodes("a") %>% html_attr("href") %>% grep("msi",.,value = T) -> down_path
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x64-jdk.zip"
-  # download.file(down_path, destfile = "Amazon-Corretto-preview-8u192.msi",  mode = 'wb')
-  # shell("Amazon-Corretto-preview-8u192.msi")
+  down_path <-
+    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x64-jdk.zip"
+
   print("windows 64bit!")
 }
 
 install_anaconda.Darwinx64 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-macosx-x64.tar.gz"
+  down_path <-
+    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-macosx-x64.tar.gz"
 
   print("mac!")
 }
 
 install_anaconda.Linuxx64 <- function(os) {
-  down_path <- "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-linux-x64.tar.gz"
+  down_path <-
+    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-linux-x64.tar.gz"
   print("linux!")
 }
