@@ -12,3 +12,6 @@ os:
 r:
   - 3.5
   - 3.6
+
+after_success:
+  - Rscript -e 'covr::codecov()'
