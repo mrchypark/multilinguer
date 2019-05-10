@@ -1,3 +1,6 @@
 ^LICENSE\.md$
 ^multilinguer\.Rproj$
 ^\.Rproj\.user$
+^appveyor\.yml$
+^README\.Rmd$
+^\.travis\.yml$

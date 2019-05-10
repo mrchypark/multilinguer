@@ -6,7 +6,8 @@
 \alias{multilinguer-package}
 \title{multilinguer: Install Amazon Corretto and Anaconda for All OS}
 \description{
-Provide install function of Amazon Corretto to use rJava and Anaconda to use reticulate for all os.
+Provide install function of Amazon Corretto to use rJava and 
+             Anaconda(Miniconda) to use reticulate for all os.
 }
 \seealso{
 Useful links:

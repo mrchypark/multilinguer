@@ -5,7 +5,7 @@
 install <- function(what) {
   switch(what,
          java = install_corretto(),
-         python = install_anaconda())
+         python = install_miniconda())
 }
 
 #' @importFrom utils download.file unzip
@@ -41,8 +41,8 @@ install_corretto <- function() {
   }
 }
 
-install_anaconda <- function(os) {
-  UseMethod("install_anaconda")
+install_miniconda <- function(os) {
+  UseMethod("install_miniconda")
 }
 
 install_anaconda.Windowsx86 <- function(os) {

@@ -7,3 +7,13 @@ check_rJava <- function(){
     return(T)
   }
 }
+
+#' @importFrom reticulate conda_list
+check_conda <- function() {
+  err <- try(reticulate::conda_list(), silent = T)
+  if (class(err) == "try-error") {
+    return(F)
+  } else {
+    return(T)
+  }
+}

@@ -6,7 +6,8 @@ Authors@R: person(given = "Chanyub",
              role = c("aut","cre"),
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
-Description: Provide install function of Amazon Corretto to use rJava and Anaconda to use reticulate for all os.
+Description: Provide install function of Amazon Corretto to use rJava and 
+             Anaconda(Miniconda) to use reticulate for all os.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,4 +17,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
     fs,
-    rstudioapi
+    rstudioapi,
+    reticulate (>= 1.12.0),
+    rJava
+Suggests: 
+    testthat (>= 2.1.0)
