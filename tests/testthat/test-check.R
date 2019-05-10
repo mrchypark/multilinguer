@@ -1,8 +1,10 @@
 test_that("internal rJava check function", {
-  testthat::expect_false(multilinguer:::check_rJava())
+  print(multilinguer:::check_rJava())
+  testthat::expect_success(multilinguer:::check_rJava())
 })
 
 
 test_that("internal conda check function", {
-  testthat::expect_false(multilinguer:::check_conda())
+  print(multilinguer:::check_conda())
+  testthat::expect_success(multilinguer:::check_conda())
 })
