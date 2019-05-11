@@ -11,7 +11,8 @@ install_rJava_binary <- function() {
 check_java <- function() {
   os <- get("os", envir = .mlgrEnv)
   if (os == "Darwinx64") {
-    message("Mac bypass")
+   ## Mac bypass
+    return(F)
   } else {
     tryCatch({
       rJava:::.check.JVM()
