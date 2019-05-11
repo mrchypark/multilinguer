@@ -12,7 +12,7 @@
 
 .onAttach <- function(libname, pkgname){
   os <- get("os", envir = .mlgrEnv)
-  packageStartupMessage(paste0("Your os is ", os))
+  packageStartupMessage(paste0("Your os is ", class(os)))
   packageStartupMessage("This package only support mac, win32, win64 for now.")
   packageStartupMessage("Please issue here https://github.com/mrchypark/multilinguer/issues.")
 }

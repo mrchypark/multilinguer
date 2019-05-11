@@ -9,16 +9,20 @@ install_rJava_binary <- function() {
 }
 
 check_java <- function() {
-  tryCatch({
-    rJava:::.check.JVM()
-  },
-  error = function(e) {
-    install_rJava_binary()
-  },
-  finally = {
-    rJava:::.check.JVM()
-  },
-  silent = T)
+  os <- get("os", envir = .mlgrEnv)
+  print(os)
+  if (class(os) != "Darwinx64") {
+    tryCatch({
+      rJava:::.check.JVM()
+    },
+    error = function(e) {
+      install_rJava_binary()
+    },
+    finally = {
+      rJava:::.check.JVM()
+    },
+    silent = T)
+  }
 }
 
 #' @importFrom reticulate conda_list
