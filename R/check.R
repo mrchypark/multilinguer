@@ -11,7 +11,9 @@ install_rJava_binary <- function() {
 check_java <- function() {
   os <- get("os", envir = .mlgrEnv)
   print(os)
-  if (class(os) != "Darwinx64") {
+  if (class(os) == "Darwinx64") {
+    return(F)
+  } else {
     tryCatch({
       rJava:::.check.JVM()
     },
