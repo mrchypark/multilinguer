@@ -36,12 +36,9 @@ matrix:
           local-dir: docs
           on:
             branch: master
-        - provider: releases
-          api_key: $GITHUB_PAT
-          file: $PKG_TARBALL
-          skip_cleanup: true
-          on:
-            tags: true
-
-after_success:
-  - Rscript -e 'covr::codecov()'
+#        - provider: releases
+#          api_key: $GITHUB_PAT
+#          file: $PKG_TARBALL
+#          skip_cleanup: true
+#          on:
+#            tags: true
