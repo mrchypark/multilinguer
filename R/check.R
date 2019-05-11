@@ -1,6 +1,10 @@
 install_rJava_binary <- function() {
   options(install.packages.check.source = "no")
-  utils::install.packages("rJava", quiet = T, dependencies = T)
+  utils::install.packages(
+    "rJava",
+    quiet = T,
+    dependencies = T,
+    repos = "https://cloud.r-project.org/")
   options(install.packages.check.source = NULL)
 }
 
