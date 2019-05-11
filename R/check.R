@@ -1,21 +1,20 @@
-check_rJava <- function(){
-  err <- try(requireNamespace("rJava", quietly = T), silent = T)
-  ret <- !(class(err) == "try-error")
-  if (ret) {
-    unloadNamespace("rJava")
-  }
-  return(ret)
-}
-
 install_rJava_binary <- function() {
   options(install.packages.check.source = "no")
-  install.packages("rJava", quiet = T, dependencies = T)
+  utils::install.packages("rJava", quiet = T, dependencies = T)
   options(install.packages.check.source = NULL)
 }
 
-check_java <- function(){
-  err <- try(rJava::.jinit(), silent = T)
-  !(class(err) == "try-error")
+check_java <- function() {
+  tryCatch({
+    rJava:::.check.JVM()
+  },
+  error = function(e) {
+    install_rJava_binary()
+  },
+  finally = {
+    rJava:::.check.JVM()
+  },
+  silent = T)
 }
 
 #' @importFrom reticulate conda_list

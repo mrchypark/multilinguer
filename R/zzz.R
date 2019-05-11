@@ -11,10 +11,6 @@
 }
 
 .onAttach <- function(libname, pkgname){
-  os <- get("os", envir = .mlgrEnv)
-  supportos <- c("Darwinx64","Windowsx64", "Windowsx86")
-  if (!(os %in% supportos)) {
-    packageStartupMessage("This package only support mac, win32, win64 for now.")
-    packageStartupMessage("Please issue here https://github.com/mrchypark/multilinguer/issues.")
-  }
+  packageStartupMessage("This package only support mac, win32, win64 for now.")
+  packageStartupMessage("Please issue here https://github.com/mrchypark/multilinguer/issues.")
 }
