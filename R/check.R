@@ -7,18 +7,17 @@ check_rJava <- function(){
   return(ret)
 }
 
-install_rJava <- function() {
-  check_rJava()
+install_rJava_binary <- function() {
+  options(install.packages.check.source = "no")
+  install.packages("rJava", quiet = T, dependencies = T)
+  options(install.packages.check.source = NULL)
 }
 
-#' @export
-#' @importFrom rJava .jinit
 check_java <- function(){
   err <- try(rJava::.jinit(), silent = T)
   !(class(err) == "try-error")
 }
 
-#' @export
 #' @importFrom reticulate conda_list
 check_conda <- function() {
   err <- try(reticulate::conda_list(), silent = T)
