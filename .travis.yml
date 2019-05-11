@@ -10,6 +10,41 @@ cache: packages
 
 warnings_are_errors: false
 
+
+matrix:
+  include:
+    - os: osx
+      r: oldrel
+    - os: linux
+      r: oldrel
+    - os: osx
+      r: release
+    - os: linux
+      r: release
+      r_packages:
+        - covr
+        - pkgdown
+      after_success:
+        - Rscript -e 'covr::codecov()'
+        - R CMD INSTALL .
+        - Rscript -e 'pkgdown::build_site()'
+      deploy:
+        - provider: pages
+          skip-cleanup: true
+          github-token: $GITHUB_PAT
+          keep-history: true
+          local-dir: docs
+          on:
+            branch: master
+        - provider: releases
+          api_key: $GITHUB_PAT
+          file: $PKG_TARBALL
+          skip_cleanup: true
+          on:
+            tags: true
+
+
+
 os:
   - osx
   - linux
