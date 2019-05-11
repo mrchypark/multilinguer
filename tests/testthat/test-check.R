@@ -1,7 +1,12 @@
-test_that("internal Java check function", {
-  print(multilinguer:::check_java())
-  expect_visible(multilinguer:::check_java())
-})
+os <- get("os", envir = .mlgrEnv)
+print(os)
+if (os != "Darwinx64") {
+  test_that("internal Java check function", {
+    print(multilinguer:::check_java())
+    expect_visible(multilinguer:::check_java())
+  })
+}
+
 
 test_that("internal conda check function", {
   print(multilinguer:::check_conda())
