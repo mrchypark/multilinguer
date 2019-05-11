@@ -3,6 +3,7 @@
 language: R
 sudo: false
 cache: packages
+warning_as_error: false
 
 os:
   - osx
