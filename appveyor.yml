@@ -17,16 +17,16 @@ environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       NOT_CRAN: true
-      ARCH: x86
+      PLATFORM: x86
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       NOT_CRAN: true
-      ARCH: x64
+      PLATFORM: x64
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       NOT_CRAN: true
-      ARCH: x86
+      PLATFORM: x86
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       NOT_CRAN: true
-      ARCH: x64
+      PLATFORM: x64
   # env vars that may need to be set, at least temporarily, from time to time
   # see https://github.com/krlmlr/r-appveyor#readme for details
   # USE_RTOOLS: true
