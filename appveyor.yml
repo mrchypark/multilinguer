@@ -21,17 +21,17 @@ environment:
     R_ARCH: x64
     PLATFORM: x64
 
-  - R_VERSION: release
-    R_ARCH: i386
-    PLATFORM: x86
+#  - R_VERSION: release
+#    R_ARCH: i386
+#    PLATFORM: x86
 
   - R_VERSION: oldrel
     R_ARCH: x64
     PLATFORM: x64
 
-  - R_VERSION: oldrel
-    R_ARCH: i386
-    PLATFORM: x86
+#  - R_VERSION: oldrel
+#    R_ARCH: i386
+#    PLATFORM: x86
 
 # Adapt as necessary starting from here
 
