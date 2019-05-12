@@ -20,19 +20,22 @@ environment:
   - R_VERSION: release
     R_ARCH: x64
     PLATFORM: x64
+    JAVA_HOME: "C:\\Program Files\\Java\\jdk1.8.0"
 
-#  - R_VERSION: release
-#    R_ARCH: i386
-#    PLATFORM: x86
+  - R_VERSION: release
+    R_ARCH: i386
+    PLATFORM: x86
+    JAVA_HOME: "C:\Program Files (x86)\Java\jdk1.8.0"
 
   - R_VERSION: oldrel
     R_ARCH: x64
     PLATFORM: x64
+    JAVA_HOME: "C:\\Program Files\\Java\\jdk1.8.0"
 
-#  - R_VERSION: oldrel
-#    R_ARCH: i386
-#    PLATFORM: x86
-
+  - R_VERSION: oldrel
+    R_ARCH: i386
+    PLATFORM: x86
+    JAVA_HOME: "C:\Program Files (x86)\Java\jdk1.8.0"
 # Adapt as necessary starting from here
 
 build_script:
