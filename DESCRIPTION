@@ -1,13 +1,13 @@
 Package: multilinguer
-Title: Install Amazon Corretto and Anaconda for All OS
+Title: Install Other Languages for windows, macos, linux.
 Version: 0.0.0.9000
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
-Description: Provide install function of Amazon Corretto to use rJava and 
-             Anaconda(Miniconda) to use reticulate for all os.
+Description: Provide install functions of other languages 
+             such as go, java, python for  windows, macos, linux.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
