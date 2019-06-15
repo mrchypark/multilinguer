@@ -51,7 +51,7 @@ install_anaconda.Windowsx86 <- function(os) {
   print("windows 32bit!")
 }
 
-install_anaconda.Windowsx64 <- function(os) {
+install_anaconda.Windowsx64 <- function(os, restart_session = TRUE) {
   down_path <-
     "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe"
   tem_path <- fs::path_temp()
@@ -61,13 +61,24 @@ install_anaconda.Windowsx64 <- function(os) {
 
   loc <- fs::path(fs::path_home(), "Miniconda3")
 
-  sys::exec_internal(fs::path(tem_path, "mc64.exe"),
+  pid <- sys::exec_background(fs::path(tem_path, "mc64.exe"),
                        args = c("/InstallationType=JustMe",
                        "/RegisterPython=0",
                        "/S",
                        "/D=", loc))
 
-  print("windows 64bit!")
+  fs::dir_ls(fs::path(loc, "Library","bin")) %>%
+    tibble::enframe(name=NULL) %>%
+    dplyr::filter(str_detect(value, "ssl|libcrypto")) %>%
+    dplyr::transmute(from = value,
+                  to = str_replace(from,
+                                   fs::path("Library","bin"),
+                                   fs::path("DLLs"))) %$%
+  fs::file_copy(from, to)
+  cat("\nInstallation complete.\n\n")
+  if (restart_session && rstudioapi::hasFun("restartSession"))
+    rstudioapi::restartSession()
+  invisible(NULL)
 }
 
 install_anaconda.Darwinx64 <- function(os) {
