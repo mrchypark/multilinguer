@@ -19,7 +19,10 @@ Imports:
     fs,
     rstudioapi,
     reticulate (>= 1.12.0),
-    sys
+    sys,
+    tibble,
+    dplyr,
+    magrittr
 Suggests: 
     testthat (>= 2.1.0),
     covr

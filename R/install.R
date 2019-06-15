@@ -10,7 +10,7 @@ install <- function(what) {
 
 #' @importFrom utils download.file unzip
 #' @importFrom fs path path_temp path_home path_home_r file_delete
-#' @importFrom rstudioapi restartSession
+#' @importFrom rstudioapi restartSession hasFun
 install_corretto <- function() {
   os <- get("os", envir = .mlgrEnv)
   temp_dir <- fs::dir_create(fs::file_temp())
