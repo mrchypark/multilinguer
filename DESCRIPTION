@@ -1,13 +1,13 @@
 Package: multilinguer
-Title: Install Other Languages for windows, macos, linux.
+Title: Cross-platform Support Functions of Other Language Installation for R Users
 Version: 0.0.0.9000
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
-Description: Provide install functions of other languages 
-             such as go, java, python for  windows, macos, linux.
+Description: Provides install functions of other languages 
+             such as go, java, python for cross-platform.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -22,7 +22,8 @@ Imports:
     sys,
     tibble,
     dplyr,
-    magrittr
+    magrittr,
+    pkgbuild
 Suggests: 
     testthat (>= 2.1.0),
     covr
