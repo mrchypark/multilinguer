@@ -47,13 +47,25 @@ install_miniconda <- function(os) {
 
 install_anaconda.Windowsx86 <- function(os) {
   down_path <-
-    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x86-jdk.zip"
+    "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86.exe"
   print("windows 32bit!")
 }
 
 install_anaconda.Windowsx64 <- function(os) {
   down_path <-
-    "https://d2znqt9b1bc64u.cloudfront.net/amazon-corretto-8.202.08.2-windows-x64-jdk.zip"
+    "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe"
+  tem_path <- fs::path_temp()
+  download.file(down_path, destfile = fs::path(tem_path, "mc64.exe"), mode="wb")
+
+  fs::dir_create(fs::path_home(), "Miniconda3")
+
+  loc <- fs::path(fs::path_home(), "Miniconda3")
+
+  sys::exec_internal(fs::path(tem_path, "mc64.exe"),
+                       args = c("/InstallationType=JustMe",
+                       "/RegisterPython=0",
+                       "/S",
+                       "/D=", loc))
 
   print("windows 64bit!")
 }

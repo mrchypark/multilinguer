@@ -4,10 +4,10 @@
 \name{multilinguer-package}
 \alias{multilinguer}
 \alias{multilinguer-package}
-\title{multilinguer: Install Amazon Corretto and Anaconda for All OS}
+\title{multilinguer: Install Other Languages for windows, macos, linux.}
 \description{
-Provide install function of Amazon Corretto to use rJava and 
-             Anaconda(Miniconda) to use reticulate for all os.
+Provide install functions of other languages 
+             such as go, java, python for  windows, macos, linux.
 }
 \seealso{
 Useful links:
