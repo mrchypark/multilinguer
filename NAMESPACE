@@ -2,6 +2,7 @@
 
 export("%>%")
 export(fix_ssl_error)
+export(has_conda)
 export(install_conda)
 import(reticulate)
 importFrom(dplyr,filter)
