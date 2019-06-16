@@ -1,17 +1,4 @@
-.mlgrEnv <- new.env()
-
-.onLoad <- function(libname, pkgname) {
-  os <- "os_class"
-  bits <- Sys.info()["machine"]
-  if (grepl("x86", bits) & grepl("64", bits)) {
-    bits <- "x64"
-  }
-  class(os) <- paste0(Sys.info()["sysname"], as.character(bits))
-  assign("os", os, envir = .mlgrEnv)
-}
-
 .onAttach <- function(libname, pkgname){
-  os <- get("os", envir = .mlgrEnv)
-  packageStartupMessage(paste0("Your os is ", class(os)))
-  packageStartupMessage("Please issue here https://github.com/mrchypark/multilinguer/issues.")
+  packageStartupMessage("If you have any problem, please issue here.")
+  packageStartupMessage("https://github.com/mrchypark/multilinguer/issues")
 }

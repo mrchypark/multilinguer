@@ -23,7 +23,8 @@ Imports:
     tibble,
     dplyr,
     magrittr,
-    pkgbuild
+    pkgbuild,
+    stringr
 Suggests: 
     testthat (>= 2.1.0),
     covr

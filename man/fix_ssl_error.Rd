@@ -4,11 +4,11 @@
 \alias{fix_ssl_error}
 \title{fix ssl error on conda}
 \usage{
-fix_ssl_error(loc = conda_loc())
+fix_ssl_error(loc = conda_root())
 }
 \arguments{
 \item{loc}{location of conda}
 }
 \description{
-Solution of this \link[=https://github.com/conda/conda/issues/8273]{issue}
+Solution of this \href{https://github.com/conda/conda/issues/8273}{issue}
 }
