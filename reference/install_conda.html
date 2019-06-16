@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>check posible java if not, install it — set_java • multilinguer</title>
+<title>install conda — install_conda • multilinguer</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="check posible java if not, install it — set_java" />
+<meta property="og:title" content="install conda — install_conda" />
 
-<meta property="og:description" content="check posible java if not, install it" />
+<meta property="og:description" content="Defualt is Miniconda3. Other options are not this package scope." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -99,24 +99,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>check posible java if not, install it</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mrchypark/multilinguer/blob/master/R/set.R'><code>R/set.R</code></a></small>
-    <div class="hidden name"><code>set_java.Rd</code></div>
+    <h1>install conda</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mrchypark/multilinguer/blob/master/R/install.R'><code>R/install.R</code></a></small>
+    <div class="hidden name"><code>install_conda.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>check posible java if not, install it</p>
+    <p>Defualt is Miniconda3. Other options are not this package scope.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>set_java</span>()</pre>
-        
+    <pre class="usage"><span class='fu'>install_conda</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'>conda_loc</span>(), <span class='kw'>restart_session</span> <span class='kw'>=</span> <span class='no'>T</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>installation path. Defualt is userhome/Miniconda3</p></td>
+    </tr>
+    <tr>
+      <th>restart_session</th>
+      <td><p>restart after installation. Defualt is TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>silent installation with Justme, add PATH options. Defualt is TRUE.</p></td>
+    </tr>
+    </table>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
                 </ul>
 
   </div>
