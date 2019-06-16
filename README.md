@@ -13,9 +13,7 @@ status](https://travis-ci.org/mrchypark/multilinguer.svg?branch=master)](https:/
 coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://codecov.io/gh/mrchypark/multilinguer?branch=master)
 <!-- badges: end -->
 
-The goal of multilinguer is to provide install function of [Amazon
-Correto](https://docs.aws.amazon.com/ko_kr/corretto/latest/corretto-8-ug/downloads-list.html)
-which is one of openjdk and
+The goal of multilinguer is to provide install function
 [Anaconda](https://docs.anaconda.com/anaconda/install/silent-mode/)
 which is one of distribution of python installer and env.
 
@@ -30,10 +28,9 @@ remotes::install_github("mrchypark/multilinguer")
 
 ## Example
 
-Package has `set()` function.
+Package has `has_*()` function.
 
 ``` r
 library(multilinguer)
-set("java")
-set_java()
+has_conda()
 ```
