@@ -8,6 +8,7 @@ has_conda <- function(){
   if (!conda_available()) {
     install_conda()
   }
+  os <- get_os()
   if (grepl("Windows", class(os))) {
     fix_ssl_error()
   }
