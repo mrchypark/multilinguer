@@ -2,7 +2,6 @@
 #'
 #' Check if there is a conda, and install if it does not exist.
 #'
-#' @return logical. TRUE maeans machine has conda.
 #' @export
 has_conda <- function(){
   if (!conda_available()) {
@@ -12,7 +11,18 @@ has_conda <- function(){
   if (grepl("Windows", class(os))) {
     fix_ssl_error()
   }
-  conda_available()
+  invisible(os)
 }
 
-
+#' has not conda
+#'
+#' Check if there is a conda, and uninstall if it does exist.
+#'
+#' @export
+has_not_conda <- function(){
+  os <- get_os()
+  if (conda_available()) {
+    remove_conda(os)
+  }
+  invisible(os)
+}

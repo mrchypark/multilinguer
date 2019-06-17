@@ -15,6 +15,8 @@ install_conda <- function(path = conda_loc(),
   dest <- conda_dest_loc(os)
   path <- conda_loc()
 
+  dependency(os)
+
   cat("Download Conda.\n")
   down_conda(os, dest)
 

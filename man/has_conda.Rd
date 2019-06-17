@@ -6,9 +6,6 @@
 \usage{
 has_conda()
 }
-\value{
-logical. TRUE maeans machine has conda.
-}
 \description{
 Check if there is a conda, and install if it does not exist.
 }

@@ -1,5 +1,5 @@
 Package: multilinguer
-Title: Cross-platform Support Functions of Other Language Installation for R Users
+Title: Cross-Platform Support Functions of Other Language Installation for R Users
 Version: 0.0.0.9000
 Authors@R: person(given = "Chanyub",
              family = "Park",
