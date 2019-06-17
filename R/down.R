@@ -48,24 +48,20 @@ conda_dest_loc.default <- function(os){
 
 
 conda_dest_loc.Windowsx86 <- function(os){
-  tem_path <- fs::path_temp()
-  dest_path <- fs::path(tem_path, "mc.exe")
+  fs::path(fs::path_temp(), "mc.exe")
 }
 
 
 conda_dest_loc.Windowsx64 <- function(os){
-  tem_path <- fs::path_temp()
-  dest_path <- fs::path(tem_path, "mc.exe")
+  fs::path(fs::path_temp(), "mc.exe")
 }
 
 
 conda_dest_loc.Darwinx64 <- function(os){
-  tem_path <- fs::path_temp()
-  dest_path <- fs::path(tem_path, "mc.sh")
+  fs::path(fs::path_home(), "mc.sh")
 }
 
 
 conda_dest_loc.Linuxx64 <- function(os){
-  tem_path <- fs::path_temp()
-  dest_path <- fs::path(tem_path, "mc.sh")
+  fs::path(fs::path_home(), "mc.sh")
 }

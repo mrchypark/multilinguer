@@ -2,11 +2,9 @@ exec_conda <- function(os, ...){
   UseMethod("exec_conda")
 }
 
-
-exec_conda.default <- function(os){
+exec_conda.default <- function(os, ...){
   stop("no method for ", class(os)[1L])
 }
-
 
 exec_conda.Windowsx86 <- function(os, dest, silent = silent){
   if (silent) {
@@ -28,12 +26,11 @@ exec_conda.Windowsx64 <- function(os, dest, path, silent = silent){
 }
 
 
-exec_conda.Darwin <- function(os, dest, silent = silent){
-# exec_conda.Darwinx64
+exec_conda.Darwinx64 <- function(os, dest, path, silent = silent){
+  sys::exec_wait("bash", args = c(dest, "-b", "-p", path))
 }
 
-
-exec_conda.Linuxx <- function(os, dest, silent = silent){
-# exec_conda.Linuxx64
+exec_conda.Linuxx64 <- function(os, dest, path, silent = silent){
+  sys::exec_wait("bash", args = c(dest, "-b", "-p", path))
 }
 
