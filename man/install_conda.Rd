@@ -10,8 +10,6 @@ install_conda(path = conda_loc(), silent = T)
 \item{path}{installation path. Defualt is userhome/Miniconda3}
 
 \item{silent}{silent installation with Justme, add PATH options. Defualt is TRUE.}
-
-\item{restart_session}{restart after installation. Defualt is TRUE.}
 }
 \description{
 Defualt is Miniconda3. Other options are not this package scope.

@@ -3,7 +3,6 @@
 #' Defualt is Miniconda3. Other options are not this package scope.
 #'
 #' @param path installation path. Defualt is userhome/Miniconda3
-#' @param restart_session restart after installation. Defualt is TRUE.
 #' @param silent silent installation with Justme, add PATH options. Defualt is TRUE.
 #'
 #' @importFrom fs file_delete
