@@ -29,6 +29,11 @@ conda_root <- function(){
   return(fs::path_join(path))
 }
 
+udpate_conda <- function(conda = "auto"){
+  conda <- reticulate::conda_binary(conda)
+  sys::exec_wait(conda, args = c("update","-y","-n","base","-c","defaults","conda"))
+}
+
 conda_uninstall_binary <- function(){
   fs::path(multilinguer:::conda_root(), "Uninstall-Miniconda3.exe")
 }

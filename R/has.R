@@ -2,10 +2,14 @@
 #'
 #' Check if there is a conda, and install if it does not exist.
 #'
+#' @param update defualt is T with conda update.
 #' @export
-has_conda <- function(){
+has_conda <- function(update = TRUE){
   if (!conda_available()) {
     install_conda()
+  }
+  if (update){
+    udpate_conda()
   }
   os <- get_os()
   if (grepl("Windows", class(os))) {
