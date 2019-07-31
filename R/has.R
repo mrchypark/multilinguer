@@ -3,17 +3,18 @@
 #' Check if there is a conda, and install if it does not exist.
 #'
 #' @param update defualt is T with conda update.
+#' @import conda4r
 #' @export
 has_conda <- function(update = TRUE){
-  if (!conda_available()) {
-    install_conda()
+  if (!conda4r::conda_available()) {
+    conda4r::install_conda()
   }
   if (update){
-    udpate_conda()
+    conda4r::update_conda()
   }
-  os <- get_os()
+  os <- conda4r::get_os()
   if (grepl("Windows", class(os))) {
-    fix_ssl_error()
+    conda4r::fix_ssl_error()
   }
   invisible(os)
 }
@@ -22,11 +23,12 @@ has_conda <- function(update = TRUE){
 #'
 #' Check if there is a conda, and uninstall if it does exist.
 #'
+#' @import conda4r
 #' @export
 has_not_conda <- function(){
-  os <- get_os()
-  if (conda_available()) {
-    remove_conda(os)
+  os <- conda4r::get_os()
+  if (conda4r::conda_available()) {
+    conda4r::remove_conda(os)
   }
   invisible(os)
 }
