@@ -32,3 +32,13 @@ has_not_conda <- function(){
   }
   invisible(os)
 }
+
+
+#' has java
+#'
+#' Check if there is a java, and install if it does not exist.
+#'
+#' @import jvmsr
+has_java <- function(){
+
+}
