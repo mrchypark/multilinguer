@@ -5,16 +5,18 @@
 #' @param update defualt is T with conda update.
 #' @import conda4r
 #' @export
-has_conda <- function(update = FALSE){
+has_conda <- function(update = TRUE, silent = T){
   if (!conda4r::conda_available()) {
-    conda4r::install_conda()
+    conda4r::install_conda(silent = silent)
   } else {
     return(TRUE)
   }
   if (grepl("Windows", osVersion)) {
+    if (!silent) cat("Fix windows conda ssl issue\n")
     conda4r::fix_ssl_error()
   }
   if (update){
+    if (!silent) cat("Update conda\n")
     conda4r::update_conda()
   }
 }
