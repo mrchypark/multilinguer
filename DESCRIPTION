@@ -16,8 +16,9 @@ BugReports: https://github.com/mrchypark/multilinguer/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
-    conda4r,
-    jvmsr
+    conda4r
 Suggests: 
     testthat (>= 2.1.0),
     covr
+Remotes: 
+    mrchypark/conda4r

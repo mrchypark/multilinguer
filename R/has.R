@@ -8,13 +8,14 @@
 has_conda <- function(update = TRUE){
   if (!conda4r::conda_available()) {
     conda4r::install_conda()
+  } else {
+    return(TRUE)
+  }
+  if (grepl("Windows", osVersion)) {
+    conda4r::fix_ssl_error()
   }
   if (update){
     conda4r::update_conda()
-  }
-  os <- conda4r::get_os()
-  if (grepl("Windows", class(os))) {
-    conda4r::fix_ssl_error()
   }
   invisible(os)
 }
@@ -24,21 +25,12 @@ has_conda <- function(update = TRUE){
 #' Check if there is a conda, and uninstall if it does exist.
 #'
 #' @import conda4r
-#' @export
-has_not_conda <- function(){
-  os <- conda4r::get_os()
-  if (conda4r::conda_available()) {
-    conda4r::remove_conda(os)
-  }
-  invisible(os)
-}
+# has_not_conda <- function(){
+#   os <- get_os()
+#   if (conda4r::conda_available()) {
+#     conda4r::remove_conda(os)
+#   }
+#   invisible(os)
+# }
 
 
-#' has java
-#'
-#' Check if there is a java, and install if it does not exist.
-#'
-#' @import jvmsr
-has_java <- function(){
-
-}
