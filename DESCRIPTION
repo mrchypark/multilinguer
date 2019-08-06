@@ -20,3 +20,5 @@ Imports:
 Suggests: 
     testthat (>= 2.1.0),
     covr
+Remotes: 
+    mrchypark/conda4r
