@@ -5,7 +5,7 @@
 #' @param update defualt is T with conda update.
 #' @import conda4r
 #' @export
-has_conda <- function(update = TRUE){
+has_conda <- function(update = FALSE){
   if (!conda4r::conda_available()) {
     conda4r::install_conda()
   } else {
@@ -17,7 +17,6 @@ has_conda <- function(update = TRUE){
   if (update){
     conda4r::update_conda()
   }
-  invisible(os)
 }
 
 #' has not conda
