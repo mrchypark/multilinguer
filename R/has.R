@@ -3,20 +3,23 @@
 #' Check if there is a conda, and install if it does not exist.
 #'
 #' @param update defualt is T with conda update.
+#' @param silent defualt is T.
+#' @param quiet defualt is F.
 #' @import conda4r
+#' @importFrom utils osVersion
 #' @export
-has_conda <- function(update = TRUE, silent = T){
+has_conda <- function(update = TRUE, silent = T, quiet = F){
   if (!conda4r::conda_available()) {
-    conda4r::install_conda(silent = silent)
+    conda4r::install_conda(silent = silent, quiet = quiet)
   } else {
     return(TRUE)
   }
   if (grepl("Windows", osVersion)) {
-    if (!silent) cat("Fix windows conda ssl issue\n")
+    if (!quiet) cat("Fix windows conda ssl issue\n")
     conda4r::fix_ssl_error()
   }
   if (update){
-    if (!silent) cat("Update conda\n")
+    if (!quiet) cat("Update conda\n")
     conda4r::update_conda()
   }
 }

@@ -4,10 +4,14 @@
 \alias{has_conda}
 \title{has conda}
 \usage{
-has_conda(update = TRUE)
+has_conda(update = TRUE, silent = T, quiet = F)
 }
 \arguments{
 \item{update}{defualt is T with conda update.}
+
+\item{silent}{defualt is T.}
+
+\item{quiet}{defualt is F.}
 }
 \description{
 Check if there is a conda, and install if it does not exist.

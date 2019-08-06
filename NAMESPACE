@@ -2,3 +2,4 @@
 
 export(has_conda)
 import(conda4r)
+importFrom(utils,osVersion)
