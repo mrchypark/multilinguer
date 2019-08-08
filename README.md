@@ -33,4 +33,5 @@ Package has `has_*()` function.
 ``` r
 library(multilinguer)
 has_conda()
+has_java()
 ```

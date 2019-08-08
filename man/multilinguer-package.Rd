@@ -4,10 +4,10 @@
 \name{multilinguer-package}
 \alias{multilinguer}
 \alias{multilinguer-package}
-\title{multilinguer: Cross-Platform Support Functions of Other Language Installation for R Users}
+\title{multilinguer: Gentle Language Installer for R User}
 \description{
 Provides install functions of other languages 
-             such as go, java, python for cross-platform.
+             such as java, python for windows and macos.
 }
 \seealso{
 Useful links:
