@@ -38,3 +38,20 @@ has_conda <- function(update = TRUE, silent = T, quiet = F){
 # }
 
 
+#' has java
+#'
+#' Check if there is a java, and install if it does not exist.
+#'
+#' @param update defualt is F.
+#' @param silent defualt is T.
+#' @param quiet defualt is F.
+#' @import correttor
+#' @importFrom utils osVersion
+#' @export
+has_java <- function(update = TRUE, silent = T, quiet = F){
+  if (!conda4r::conda_available()) {
+    conda4r::install_conda(silent = silent, quiet = quiet)
+  } else {
+    return(TRUE)
+  }
+}

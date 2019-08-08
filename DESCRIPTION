@@ -7,7 +7,7 @@ Authors@R: person(given = "Chanyub",
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
 Description: Provides install functions of other languages 
-             such as java, python for cross-platform.
+             such as java, python for windows and macos.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,9 +16,11 @@ BugReports: https://github.com/mrchypark/multilinguer/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports:
-    conda4r
+    conda4r,
+    correttor
 Suggests: 
     testthat (>= 2.1.0),
     covr
 Remotes: 
-    mrchypark/conda4r
+    mrchypark/conda4r,
+    mrchypark/correttor
