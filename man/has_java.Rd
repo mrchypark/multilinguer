@@ -4,7 +4,10 @@
 \alias{has_java}
 \title{has java}
 \usage{
-has_java()
+has_java(force = FALSE)
+}
+\arguments{
+\item{force}{force installation. Defualt is FALSE}
 }
 \description{
 Check if there is a java, and install if it does not exist.

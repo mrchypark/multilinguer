@@ -4,9 +4,12 @@
 \alias{has_conda}
 \title{has conda}
 \usage{
-has_conda(update = TRUE, silent = T, quiet = F)
+has_conda(force = FALSE, update = TRUE, silent = TRUE,
+  quiet = FALSE)
 }
 \arguments{
+\item{force}{force installation. Defualt is FALSE}
+
 \item{update}{defualt is T with conda update.}
 
 \item{silent}{defualt is T.}
