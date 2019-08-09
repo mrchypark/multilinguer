@@ -36,7 +36,7 @@ has_conda <- function(force = FALSE,
 #' @import correttor
 #' @export
 has_java <- function(force = FALSE){
-  if (!correttor::java_available(get_os()) | force) {
+  if (!correttor::java_available() | force) {
     correttor::install_corretto()
   } else {
     return(TRUE)
