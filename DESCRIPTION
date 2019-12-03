@@ -15,12 +15,12 @@ URL: https://github.com/mrchypark/multilinguer
 BugReports: https://github.com/mrchypark/multilinguer/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Imports:
-    conda4r,
-    correttor
-Suggests: 
-    testthat (>= 2.1.0),
-    covr
-Remotes: 
-    mrchypark/conda4r,
-    mrchypark/correttor
+Imports: 
+    sys,
+    fs,
+    usethis,
+    zip,
+    askpass,
+    xml2,
+    rvest,
+    rstudioapi
