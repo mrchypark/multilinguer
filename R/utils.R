@@ -33,3 +33,9 @@ post_process <- function(command) {
      ))
   }
 }
+
+check_package <- function(package_name) {
+  pack <- fs::dir_ls(.libPaths())
+  pack <- unique(sapply(strsplit(pack, "/"), function(x) x[length(x)]))
+  package_name %in% pack
+}

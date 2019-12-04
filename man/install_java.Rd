@@ -2,16 +2,19 @@
 % Please edit documentation in R/install.R
 \name{install_java}
 \alias{install_java}
-\title{install conda}
+\alias{install_jdk}
+\title{install \code{java}}
 \usage{
 install_java()
+
+install_jdk()
 }
 \description{
-install miniconda
-}
-\details{
-install \code{java}
-
 install \code{corretto} which is one of openjdk(java) distro.
-Case of \code{MacOS}, remove all java and reinstall corretto version 11.
+Case of \code{MacOS}, remove all java and reinstall \code{corretto} version 11.
+}
+\examples{
+\dontrun{
+  install_java()
+}
 }

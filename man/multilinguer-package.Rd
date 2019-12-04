@@ -7,7 +7,7 @@
 \title{multilinguer: Gentle Language Installer for R User}
 \description{
 Provides install functions of other languages 
-             such as java, python for windows and macos.
+             such as `java`, `python` for `windows` and `macos`.
 }
 \seealso{
 Useful links:
