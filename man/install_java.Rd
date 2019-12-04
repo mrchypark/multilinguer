@@ -2,9 +2,12 @@
 % Please edit documentation in R/install.R
 \name{install_java}
 \alias{install_java}
+\alias{install_jdk}
 \title{install conda}
 \usage{
 install_java()
+
+install_jdk()
 }
 \description{
 install miniconda
