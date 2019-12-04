@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • multilinguer</title>
+<title>Install Miniconda — install_miniconda • multilinguer</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Install Miniconda — install_miniconda" />
+<meta property="og:description" content="Install Miniconda" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -101,72 +103,52 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Install Miniconda</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mrchypark/multilinguer/blob/master/R/install.R'><code>R/install.R</code></a></small>
+    <div class="hidden name"><code>install_miniconda.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Install Miniconda</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>install_miniconda</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="crt_download.html">crt_download()</a></code> </p>
-        </td>
-        <td><p>corretto installer download</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="crt_unc.html">crt_unc()</a></code> </p>
-        </td>
-        <td><p>uncompress corretto source</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="install_java.html">install_java()</a></code> <code><a href="install_java.html">install_jdk()</a></code> </p>
-        </td>
-        <td><p>install <code>java</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="install_miniconda.html">install_miniconda()</a></code> </p>
-        </td>
-        <td><p>Install Miniconda</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="java_available.html">java_available()</a></code> </p>
-        </td>
-        <td><p>java available check</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="java_home_check.html">java_home_check()</a></code> </p>
-        </td>
-        <td><p>java home check</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>The path in which Miniconda will be installed. Note that the
+installer does not support paths containing spaces.</p></td>
+    </tr>
+    <tr>
+      <th>update</th>
+      <td><p>Boolean; update to the latest version of Miniconda after install?</p></td>
+    </tr>
+    <tr>
+      <th>force</th>
+      <td><p>Boolean; force re-installation if Miniconda is already installed
+at the requested path?</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Download the <a href='https://docs.conda.io/en/latest/miniconda.html'>Miniconda</a>
+installer, and use it to install Miniconda.
+All function and descriptions from <a href='https://github.com/rstudio/reticulate/blob/master/R/miniconda.R'>reticulate package</a></p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
+
   </div>
 </div>
 
