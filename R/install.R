@@ -47,6 +47,7 @@ install_java <- function(){
     post_process("install.packages('rJava', type = 'binary');library(rJava);.jinit();rstudioapi::restartSession()")
 }
 
+#' @rdname install_java
 #' @export
 #' @rdname install_java
 install_jdk <- install_java
