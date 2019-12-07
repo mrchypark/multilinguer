@@ -10,6 +10,10 @@
 #' @param update Boolean; update to the latest version of Miniconda after install?
 #' @param force Boolean; force re-installation if Miniconda is already installed
 #'   at the requested path?
+#' @examples
+#' \dontrun{
+#'   install_miniconda()
+#' }
 #' @export
 install_miniconda <- function(path = "",
                               update = TRUE,
@@ -35,6 +39,7 @@ install_miniconda <- function(path = "",
 #' @examples
 #' \dontrun{
 #'   install_java()
+#'   install_jdk()
 #' }
 #' @export
 install_java <- function(){
