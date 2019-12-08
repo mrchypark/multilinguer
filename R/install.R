@@ -13,6 +13,7 @@
 #' @examples
 #' \dontrun{
 #'   install_miniconda()
+#'   install_conda()
 #' }
 #' @export
 install_miniconda <- function(path = "",
@@ -29,6 +30,9 @@ install_miniconda <- function(path = "",
                                 force = force)
 }
 
+#' @rdname install_miniconda
+#' @export
+install_conda <- install_miniconda
 
 #' install `java`
 #'
@@ -54,7 +58,6 @@ install_java <- function(){
 
 #' @rdname install_java
 #' @export
-#' @rdname install_java
 install_jdk <- install_java
 
 
