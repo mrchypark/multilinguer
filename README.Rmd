@@ -32,10 +32,10 @@ remotes::install_github("mrchypark/multilinguer")
 
 ## Example
 
-Package has `has_*()` function.
+Package has `install_*()` function.
 
 ``` r
 library(multilinguer)
-has_conda()
-has_java()
+install_conda()
+install_java()
 ```

@@ -2,6 +2,7 @@
 #'
 #' windows x64 is for java11 x64
 #' windows x86 is for java8 x86
+#' mac is for java11 x64
 #'
 #' @param os Type of OS
 #' @param dest where to download
