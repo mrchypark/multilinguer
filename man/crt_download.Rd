@@ -14,4 +14,5 @@ crt_download(os, dest)
 \description{
 windows x64 is for java11 x64
 windows x86 is for java8 x86
+mac is for java11 x64
 }

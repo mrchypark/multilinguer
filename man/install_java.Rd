@@ -16,5 +16,6 @@ Case of \code{MacOS}, remove all java and reinstall \code{corretto} version 11.
 \examples{
 \dontrun{
   install_java()
+  install_jdk()
 }
 }

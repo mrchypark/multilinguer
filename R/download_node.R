@@ -4,23 +4,26 @@
 #' @param dest where to download
 #' @importFrom utils download.file
 #' @export
-node_download <- function(os, dest){
+node_download <- function(os, dest) {
   UseMethod("node_download")
 }
 
-node_download.default <- function(os){
+node_download.default <- function(os) {
   stop("no method for ", class(os)[1L])
 }
 
 
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes html_attr
-download_link_node <- function(version = c("lts", "current")){
+download_link_node <- function(version = c("lts", "current")) {
   version <- match.arg(version)
   switch (version,
-    "lts" = {tar <- "https://nodejs.org/en/download/"},
-    "current" = {tar <- "https://nodejs.org/en/download/current/"}
-  )
+          "lts" = {
+            tar <- "https://nodejs.org/en/download/"
+          },
+          "current" = {
+            tar <- "https://nodejs.org/en/download/current/"
+          })
   hobj <- xml2::read_html(tar)
   tnodes <- rvest::html_nodes(hobj, "a")
   links <- rvest::html_attr(tnodes, "href")

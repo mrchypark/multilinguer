@@ -7,7 +7,7 @@
 \title{multilinguer: Gentle Language Installer for R User}
 \description{
 Provides install functions of other languages 
-             such as `java`, `python` for `windows` and `macos`.
+             such as 'java', 'python' for windows and mac.
 }
 \seealso{
 Useful links:
@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Chanyub Park \email{mrchypark@gmail.com} (0000-0001-6474-2570)
+\strong{Maintainer}: Chanyub Park \email{mrchypark@gmail.com} (\href{https://orcid.org/0000-0001-6474-2570}{ORCID})
 
 }
 \keyword{internal}

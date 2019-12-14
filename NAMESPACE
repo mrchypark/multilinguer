@@ -2,11 +2,12 @@
 
 export(crt_download)
 export(crt_unc)
+export(install_conda)
 export(install_java)
 export(install_jdk)
-export(install_miniconda)
 export(java_available)
 export(java_home_check)
+export(node_download)
 importFrom(askpass,askpass)
 importFrom(fs,path)
 importFrom(fs,path_home)
