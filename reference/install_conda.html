@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Install Miniconda — install_miniconda • multilinguer</title>
+<title>Install conda — install_conda • multilinguer</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Install Miniconda — install_miniconda" />
-<meta property="og:description" content="Install Miniconda" />
+<meta property="og:title" content="Install conda — install_conda" />
+<meta property="og:description" content="Install conda" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">multilinguer</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.3</span>
       </span>
     </div>
 
@@ -105,37 +105,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Install Miniconda</h1>
+    <h1>Install conda</h1>
     <small class="dont-index">Source: <a href='https://github.com/mrchypark/multilinguer/blob/master/R/install.R'><code>R/install.R</code></a></small>
-    <div class="hidden name"><code>install_miniconda.Rd</code></div>
+    <div class="hidden name"><code>install_conda.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Install Miniconda</p>
+    <p>Install conda</p>
     </div>
 
-    <pre class="usage"><span class='fu'>install_miniconda</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+    <pre class="usage"><span class='fu'>install_conda</span>()</pre>
 
-<span class='fu'>install_conda</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>path</th>
-      <td><p>The path in which Miniconda will be installed. Note that the
-installer does not support paths containing spaces.</p></td>
-    </tr>
-    <tr>
-      <th>update</th>
-      <td><p>Boolean; update to the latest version of Miniconda after install?</p></td>
-    </tr>
-    <tr>
-      <th>force</th>
-      <td><p>Boolean; force re-installation if Miniconda is already installed
-at the requested path?</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -145,14 +125,12 @@ All function and descriptions from <a href='https://github.com/rstudio/reticulat
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-  <span class='fu'>install_miniconda</span>()
   <span class='fu'>install_conda</span>()
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
