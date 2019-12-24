@@ -32,5 +32,5 @@ Package has `install_*()` function.
 
 ``` r
 library(multilinguer)
-has_java()
+install_java()
 ```
