@@ -20,18 +20,17 @@ which is one of distribution of python installer and env.
 ## Installation
 
 You can install the developing version of multilinguer from
-[github](https://github.com/mrchypark/multilinguer) with:
+[gitlab](https://gitlab.com/mrchypark/multilinguer) with:
 
 ``` r
-remotes::install_github("mrchypark/multilinguer")
+remotes::install_gitlab("mrchypark/multilinguer")
 ```
 
 ## Example
 
-Package has `has_*()` function.
+Package has `install_*()` function.
 
 ``` r
 library(multilinguer)
-has_conda()
 has_java()
 ```
