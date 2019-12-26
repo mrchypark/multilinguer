@@ -14,8 +14,8 @@ coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge
 <!-- badges: end -->
 
 The goal of multilinguer is to provide install function
-[Anaconda](https://docs.anaconda.com/anaconda/install/silent-mode/)
-which is one of distribution of python installer and env.
+[correto](https://aws.amazon.com/en/corretto/) which is one of
+distribution of jdk and many others like conda for R user.
 
 ## Installation
 
@@ -32,5 +32,6 @@ Package has `install_*()` function.
 
 ``` r
 library(multilinguer)
+install_conda()
 install_java()
 ```
