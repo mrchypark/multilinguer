@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Install conda — install_conda • multilinguer</title>
+<title>install conda — install_conda • multilinguer</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Install conda — install_conda" />
-<meta property="og:description" content="Install conda" />
+<meta property="og:title" content="install conda — install_conda" />
+<meta property="og:description" content="Check if there is a conda, and install if it does not exist." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -108,34 +108,44 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Install conda</h1>
+    <h1>install conda</h1>
     <small class="dont-index">Source: <a href='https://github.com/mrchypark/multilinguer/blob/master/R/install.R'><code>R/install.R</code></a></small>
     <div class="hidden name"><code>install_conda.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Install conda</p>
+    <p>Check if there is a conda, and install if it does not exist.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>install_conda</span>()</pre>
+    <pre class="usage"><span class='fu'>install_conda</span>(<span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>update</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>force</th>
+      <td><p>force installation. Defualt is FALSE</p></td>
+    </tr>
+    <tr>
+      <th>update</th>
+      <td><p>defualt is T with conda update.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>defualt is T.</p></td>
+    </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>defualt is F.</p></td>
+    </tr>
+    </table>
 
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Download the <a href='https://docs.conda.io/en/latest/miniconda.html'>Miniconda</a>
-installer, and use it to install Miniconda.
-All function and descriptions from <a href='https://github.com/rstudio/reticulate/blob/master/R/miniconda.R'>reticulate package</a></p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-  <span class='fu'>install_conda</span>()
-}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#details">Details</a></li>
-      <li><a href="#examples">Examples</a></li>
+      <li><a href="#arguments">Arguments</a></li>
     </ul>
 
   </div>
