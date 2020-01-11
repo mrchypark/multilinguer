@@ -50,39 +50,3 @@ crt_dest_loc <- function() {
     message("not support os yet")
   ))
 }
-
-
-
-#' download_links <- function(){
-#'   link8 <- download_link_8()
-#'   link11 <- download_link_11()
-#'   return(
-#'     switch(class(get_os()),
-#'            Darwinx64 = grep("(?=.*mac)(?=.*x64)(?=.*tar)", link11, value = T, perl = T)[1],
-#'            Windowsx64 = grep("(?=.*win)(?=.*x64)(?=.*zip)", link11, value = T, perl = T)[1],
-#'            Windowsx86 = grep("(?=.*win)(?=.*jdk)(?=.*x86)", link8, value = T, perl = T)[1],
-#'            message("not support os yet")
-#'     )
-#'   )
-#' }
-#'
-#' #' @importFrom xml2 read_html
-#' #' @importFrom rvest html_nodes html_attr
-#' download_link_8 <- function(){
-#'   hobj <- xml2::read_html("https://docs.aws.amazon.com/ko_kr/corretto/latest/corretto-8-ug/downloads-list.html")
-#'   tnodes <- rvest::html_nodes(hobj, "p a")
-#'   links <- rvest::html_attr(tnodes, "href")
-#'   return(links)
-#' }
-#'
-#' #' @importFrom xml2 read_html
-#' #' @importFrom rvest html_nodes html_attr
-#' download_link_11 <- function(){
-#'   hobj <- xml2::read_html("https://docs.aws.amazon.com/ko_kr/corretto/latest/corretto-11-ug/downloads-list.html")
-#'   tnodes <- rvest::html_nodes(hobj, "p a")
-#'   links <- rvest::html_attr(tnodes, "href")
-#'   return(links)
-#' }
-
-
-
