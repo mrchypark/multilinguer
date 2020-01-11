@@ -1,17 +1,30 @@
-#' Install conda
+#' install conda
 #'
-#' @details
-#' Download the [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-#' installer, and use it to install Miniconda.
-#' All function and descriptions from [reticulate package](https://github.com/rstudio/reticulate/blob/master/R/miniconda.R)
+#' Check if there is a conda, and install if it does not exist.
 #'
-#' @examples
-#' \dontrun{
-#'   install_conda()
-#' }
+#' @param force force installation. Defualt is FALSE
+#' @param update defualt is T with conda update.
+#' @param silent defualt is T.
+#' @param quiet defualt is F.
 #' @export
-install_conda <- function() {
-  message("Please install reticulate(>= 1.13.1) package and use install_miniconda() function.")
+install_conda <- function(force = FALSE,
+                      update = TRUE,
+                      silent = TRUE,
+                      quiet = FALSE){
+
+  if (!conda_available() | force) {
+    conda_install(silent = silent, quiet = quiet)
+  } else {
+    return(TRUE)
+  }
+  if (grepl("Windows", class(get_os()))) {
+    if (!quiet) cat("Fix windows conda ssl issue\n")
+    fix_ssl_error()
+  }
+  if (update) {
+    if (!quiet) cat("Update conda\n")
+    conda_update()
+  }
 }
 
 #' install `java`
