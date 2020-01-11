@@ -20,14 +20,14 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://codecov.io/gh/mrchypark/multilinguer?branch=master)
 <!-- badges: end -->
 
-The goal of multilinguer is to provide install function [Anaconda](https://docs.anaconda.com/anaconda/install/silent-mode/) which is one of distribution of python installer and env.
+The goal of multilinguer is to provide install function [ correto](https://aws.amazon.com/en/corretto/) which is one of distribution of jdk and many others like conda for R user.
 
 ## Installation
 
-You can install the developing version of multilinguer from [github](https://github.com/mrchypark/multilinguer) with:
+You can install the developing version of multilinguer from [gitlab](https://gitlab.com/mrchypark/multilinguer) with:
 
 ``` r
-remotes::install_github("mrchypark/multilinguer")
+remotes::install_gitlab("mrchypark/multilinguer")
 ```
 
 ## Example
