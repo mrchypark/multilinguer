@@ -11,7 +11,7 @@
 #' }
 #' @export
 install_conda <- function() {
-  message("Please install reticulate(>= 1.13.1) package and use install_miniconda() function.")
+  message("Please install reticulate(>= 1.14) package and use install_miniconda() function.")
 }
 
 #' install `java`
