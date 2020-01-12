@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • multilinguer</title>
+<title>Install Rust — rustup_windows • multilinguer</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Install Rust — rustup_windows" />
+<meta property="og:description" content="Install Rust" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -104,84 +106,44 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Install Rust</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mrchypark/multilinguer/blob/master/R/download_rust.R'><code>R/download_rust.R</code></a></small>
+    <div class="hidden name"><code>rustup.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Install Rust</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>rustup_windows</span>()
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="crt_download.html">crt_download()</a></code> </p>
-        </td>
-        <td><p>corretto installer download</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="crt_unc.html">crt_unc()</a></code> </p>
-        </td>
-        <td><p>uncompress corretto source</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="install_conda.html">install_conda()</a></code> </p>
-        </td>
-        <td><p>Install conda</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="install_java.html">install_java()</a></code> <code><a href="install_java.html">install_jdk()</a></code> </p>
-        </td>
-        <td><p>install <code>java</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="java_available.html">java_available()</a></code> </p>
-        </td>
-        <td><p>java available check</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="java_home_check.html">java_home_check()</a></code> </p>
-        </td>
-        <td><p>java home check</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="node_download.html">node_download()</a></code> </p>
-        </td>
-        <td><p>nodejs installer download</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rustup.html">rustup_windows()</a></code> <code><a href="rustup.html">rust_uninstall()</a></code> </p>
-        </td>
-        <td><p>Install Rust</p></td>
-      </tr>
-    </tbody>
+<span class='fu'>rust_uninstall</span>()</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>targets</th>
+      <td><p>which compiler targets would you like to install</p></td>
+    </tr>
     </table>
-  </div>
 
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/grep.html'>grepl</a></span>(<span class='st'>"64"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.info.html'>Sys.info</a></span>()<span class='kw'>[[</span><span class='st'>"machine"</span>]])){
+<span class='fu'>rust_uninstall</span>()
+<span class='fu'>rustup_windows</span>()
+}</div><div class='output co'>#&gt; <span class='error'>Error: Failed to execute '/tmp/RtmpoAYdPQ/rustup-init.exe' (Permission denied)</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
