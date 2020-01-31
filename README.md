@@ -45,3 +45,11 @@ library(multilinguer)
 install_conda()
 install_java()
 ```
+
+## java for mac
+
+rJava package on MacOS, only work with Administrator privileges. So
+install\_java() function request you MacOS
+password.
+
+![](https://user-images.githubusercontent.com/6179259/73519641-fbbaa700-4444-11ea-9f52-5c3941040506.png)

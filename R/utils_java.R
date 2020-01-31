@@ -1,7 +1,6 @@
 #' java available check
 #'
 #' @importFrom sys exec_wait
-#' @export
 java_available <- function() {
   os <- class(get_os())
   switch(
@@ -20,7 +19,6 @@ java_available <- function() {
 #' java home check
 #'
 #' @param os system os
-#' @export
 java_home_check <- function(os) {
   UseMethod("java_home_check")
 }

@@ -8,30 +8,30 @@
 #' @param dest where to download
 #' @importFrom utils download.file
 #' @export
-crt_download <- function(os, dest){
-  UseMethod("crt_download")
+java_download <- function(os, dest){
+  UseMethod("java_download")
 }
 
-crt_download.default <- function(os){
+java_download.default <- function(os){
   stop("no method for ", class(os)[1L])
 }
 
-crt_download.Windowsx86 <- function(os, dest = crt_dest_loc()){
+java_download.Windowsx86 <- function(os, dest = crt_dest_loc()){
   tar <- "https://corretto.aws/downloads/latest/amazon-corretto-8-x86-windows-jdk.zip"
   download.file(tar, destfile = dest, mode = "wb")
 }
 
-crt_download.Windowsx64 <- function(os, dest = crt_dest_loc()){
+java_download.Windowsx64 <- function(os, dest = crt_dest_loc()){
   tar <- "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
   download.file(tar, destfile = dest, mode = "wb")
 }
 
-crt_download.Darwinx64 <- function(os, dest = crt_dest_loc()){
+java_download.Darwinx64 <- function(os, dest = crt_dest_loc()){
   tar <- "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.tar.gz"
   download.file(tar, destfile = dest)
 }
 
-crt_download.Linuxx64 <- function(os, dest = crt_dest_loc()){
+java_download.Linuxx64 <- function(os, dest = crt_dest_loc()){
   tar <- "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
   download.file(tar, destfile = dest)
 }
