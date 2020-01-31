@@ -117,7 +117,7 @@
     <p>Install Rust</p>
     </div>
 
-    <pre class="usage"><span class='fu'>rustup_windows</span>()
+    <pre class="usage"><span class='fu'>rustup_windows</span>(<span class='no'>targets</span>)
 
 <span class='fu'>rust_uninstall</span>()</pre>
 
@@ -132,10 +132,10 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/grep.html'>grepl</a></span>(<span class='st'>"64"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.info.html'>Sys.info</a></span>()<span class='kw'>[[</span><span class='st'>"machine"</span>]])){
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='fu'>rust_uninstall</span>()
 <span class='fu'>rustup_windows</span>()
-}</div><div class='output co'>#&gt; <span class='error'>Error: Failed to execute '/tmp/RtmpQmq1yy/rustup-init.exe' (Permission denied)</span></div></pre>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
