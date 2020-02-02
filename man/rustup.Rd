@@ -15,3 +15,9 @@ rust_uninstall()
 \description{
 Install Rust
 }
+\examples{
+\dontrun{
+rust_uninstall()
+rustup_windows()
+}
+}

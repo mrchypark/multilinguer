@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/multilinguer)](https://cran.r-project.org/package=multilinguer)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/mrchypark/multilinguer?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/multilinguer)
 [![Travis build
@@ -18,6 +20,14 @@ The goal of multilinguer is to provide install function
 distribution of jdk and many others like conda for R user.
 
 ## Installation
+
+You can install the multilinguer from
+[cran](https://cran.r-project.org/web/packages/multilinguer/index.html)
+with:
+
+``` r
+install.packages("multilinguer")
+```
 
 You can install the developing version of multilinguer from
 [gitlab](https://gitlab.com/mrchypark/multilinguer) with:
@@ -35,3 +45,10 @@ library(multilinguer)
 install_conda()
 install_java()
 ```
+
+## java for mac
+
+rJava package on MacOS, only work with Administrator privileges. So
+install\_java() function request you MacOS password.
+
+![](https://user-images.githubusercontent.com/6179259/73519641-fbbaa700-4444-11ea-9f52-5c3941040506.png)
