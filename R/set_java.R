@@ -11,7 +11,7 @@ set_java_home.Darwinx64 <- function(os) {
 }
 
 #' @importFrom usethis write_union
-#' @importFrom fs path path_home_r
+#' @importFrom fs path dir_ls
 set_java_home.Windowsx64 <- function(os, path = "") {
   if (path == "") {
     path <- fs::dir_ls(crt_path(os))[1]
@@ -25,8 +25,7 @@ set_java_home.Windowsx64 <- function(os, path = "") {
   paths <- paths[nchar(paths) > 0]
   paths <- paste0(paths, collapse = ";")
   res <- setx("path", paths)
-  forenvron <- paste0('JAVA_HOME=', path)
-  usethis::write_union(fs::path(fs::path_home_r(), "/", ext = "Renviron"), forenvron)
+  message("You need to turn off and restart Rstudio not only R session.")
 }
 
 set_java_home.Windowsx86 <- set_java_home.Windowsx64

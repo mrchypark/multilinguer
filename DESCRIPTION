@@ -14,7 +14,7 @@ LazyData: true
 URL: https://github.com/mrchypark/multilinguer
 BugReports: https://github.com/mrchypark/multilinguer/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Imports: 
     sys,
     fs,
