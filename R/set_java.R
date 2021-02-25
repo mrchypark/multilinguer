@@ -10,6 +10,10 @@ set_java_home.Darwinx64 <- function(os) {
   invisible(os)
 }
 
+set_java_home.Linuxx64 <- function(os) {
+  invisible(os)
+}
+
 #' @importFrom usethis write_union
 #' @importFrom fs path dir_ls
 set_java_home.Windowsx64 <- function(os, path = "") {
