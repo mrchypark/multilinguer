@@ -50,6 +50,10 @@ crt_path.Darwinx64 <- function(os) {
   fs::path("/Library/Java/JavaVirtualMachines/")
 }
 
+crt_path.Linuxx64 <- function(os) {
+  fs::path(fs::path_home(), "corretto")
+}
+
 setx <- function(key = "", value = "") {
   sys::exec_wait("setx", args = c(key, value), std_out = F)
 }
