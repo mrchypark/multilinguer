@@ -1,4 +1,4 @@
-#' Install conda
+#' Install miniconda
 #'
 #' @details
 #' Download the [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
@@ -11,8 +11,15 @@
 #' }
 #' @export
 install_conda <- function() {
-  message("Please install reticulate(>= 1.14) package and use install_miniconda() function.")
+  message("If you want to install with params, please use reticulate package diractly.")
+  post_process(
+    "install.packages('reticulate', type = 'binary');reticulate::install_miniconda()"
+  )
 }
+
+#' @rdname install_conda
+#' @export
+install_miniconda <- install_conda
 
 #' install `java`
 #'

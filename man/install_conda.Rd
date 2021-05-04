@@ -2,12 +2,15 @@
 % Please edit documentation in R/install.R
 \name{install_conda}
 \alias{install_conda}
-\title{Install conda}
+\alias{install_miniconda}
+\title{Install miniconda}
 \usage{
 install_conda()
+
+install_miniconda()
 }
 \description{
-Install conda
+Install miniconda
 }
 \details{
 Download the \href{https://docs.conda.io/en/latest/miniconda.html}{Miniconda}

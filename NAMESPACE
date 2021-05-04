@@ -3,6 +3,7 @@
 export(install_conda)
 export(install_java)
 export(install_jdk)
+export(install_miniconda)
 export(java_download)
 export(node_download)
 export(rust_download)
