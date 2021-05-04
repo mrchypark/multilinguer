@@ -19,6 +19,10 @@ crt_unc.Windowsx64 <- function(os, ...){
   zip::unzip(...)
 }
 
+crt_unc.Linuxx64 <- function(os, ...){
+  zip::unzip(...)
+}
+
 #' @importFrom askpass askpass
 #' @importFrom fs path
 crt_unc.Darwinx64 <- function(os, file_path, exdir, ...){

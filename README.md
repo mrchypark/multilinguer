@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# multilinguer
+# multilinguer <img src="man/figures/logo.png" align="right" height=140/>
 
 <!-- badges: start -->
 
@@ -49,7 +49,6 @@ install_java()
 ## java for mac
 
 rJava package on MacOS, only work with Administrator privileges. So
-install\_java() function request you MacOS
-password.
+install\_java() function request you MacOS password.
 
 ![](https://user-images.githubusercontent.com/6179259/73519641-fbbaa700-4444-11ea-9f52-5c3941040506.png)

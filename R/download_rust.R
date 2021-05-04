@@ -4,41 +4,36 @@
 #' @param dest where to download
 #' @importFrom utils download.file
 #' @export
-rs_download <- function(os, dest) {
-  UseMethod("rs_download")
+rust_download <- function(os, dest){
+  UseMethod("rust_download")
 }
 
-rs_download.default <- function(os) {
+rust_download.default <- function(os){
   stop("no method for ", class(os)[1L])
 }
 
-rs_download.Windowsx86 <- function(os, dest = rs_dest_loc()) {
-  tar <-
-    "https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe"
+rust_download.Windowsx86 <- function(os, dest = rs_dest_loc()){
+  tar <- "https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe"
   download.file(tar, destfile = dest, mode = "wb")
 }
 
-rs_download.Windowsx64 <- function(os, dest = rs_dest_loc()) {
-  tar <-
-    "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-gnu/rustup-init.exe"
+rust_download.Windowsx64 <- function(os, dest = rs_dest_loc()){
+  tar <- "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-gnu/rustup-init.exe"
   download.file(tar, destfile = dest, mode = "wb")
 }
 
-rs_download.Darwinx64 <- function(os, dest = rs_dest_loc()) {
-  tar <-
-    "https://static.rust-lang.org/rustup/dist/x86_64-apple-darwin/rustup-init"
+rust_download.Darwinx64 <- function(os, dest = rs_dest_loc()){
+  tar <- "https://static.rust-lang.org/rustup/dist/x86_64-apple-darwin/rustup-init"
   download.file(tar, destfile = dest)
 }
 
-rs_download.Linuxx64 <- function(os, dest = rs_dest_loc()) {
-  tar <-
-    "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init"
+rust_download.Linuxx64 <- function(os, dest = rs_dest_loc()){
+  tar <- "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init"
   download.file(tar, destfile = dest)
 }
 
-rs_download.Linuxx86 <- function(os, dest = rs_dest_loc()) {
-  tar <-
-    "https://static.rust-lang.org/rustup/dist/i686-unknown-linux-gnu/rustup-init"
+rust_download.Linuxx86<- function(os, dest = rs_dest_loc()){
+  tar <- "https://static.rust-lang.org/rustup/dist/i686-unknown-linux-gnu/rustup-init"
   download.file(tar, destfile = dest)
 }
 
