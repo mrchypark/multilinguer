@@ -1,3 +1,5 @@
+# multilinguer 0.0.6
+
 # multilinguer 0.0.4
 
 * [hotfix] Fixed download corretto link.

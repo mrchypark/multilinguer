@@ -1,6 +1,6 @@
 Package: multilinguer
 Title: Gentle Language Installer for R User
-Version: 0.0.5.9000
+Version: 0.0.6
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
