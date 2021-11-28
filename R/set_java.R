@@ -16,10 +16,9 @@ set_java_home.Darwinx64 <- function(os) {
 
 set_java_home.Linuxx64 <- function(os) {
   jpath <- fs::dir_ls(crt_path(os))
-
-  usethis::write_union(fs::path(fs::fs::path_home(), ".profile"), paste0("export JAVA_HOME=", jpath))
-  usethis::write_union(fs::path(fs::fs::path_home(), ".profile"), paste0("export JRE_HOME=", jpath, "/jre"))
-  usethis::write_union(fs::path(fs::fs::path_home(), ".profile"), paste0("export PATH=$PATH:", jpath,"/bin"))
+  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JAVA_HOME=", jpath))
+  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JRE_HOME=", jpath, "/jre"))
+  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export PATH=$PATH:", jpath,"/bin"))
   Sys.setenv("JAVA_HOME" = paste0(jpath))
   Sys.setenv("JRE_HOME" = paste0(jpath,"/jre"))
   Sys.setenv("PATH" = paste0("$PATH:", jpath,"/bin"))
@@ -35,12 +34,13 @@ set_java_home.Windowsx64 <- function(os, path = "") {
     stop("There's empty. Please install java first.")
   }
   res <- setx("JAVA_HOME", path)
+  Sys.setenv("JAVA_HOME" = res)
   paths <- paste0("%JAVA_HOME%\\bin;", Sys.getenv("path"))
   paths <- unique(strsplit(paths, ";")[[1]])
   paths <- paths[nchar(paths) > 0]
   paths <- paste0(paths, collapse = ";")
   res <- setx("path", paths)
-  message("You need to turn off and restart Rstudio not only R session.")
+  Sys.setenv("PATH" = res)
 }
 
 set_java_home.Windowsx86 <- set_java_home.Windowsx64
