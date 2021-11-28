@@ -36,8 +36,12 @@ install_miniconda <- install_conda
 install_java <- function() {
   dest <- download_corretto()
   loc <- crt_path()
+  message(paste("JDK will located at", loc))
   crt_unc(dest, exdir = loc)
   set_java_home()
+  message(paste("ENV will set"))
+  message(paste("JAVA_HOME=", Sys.getenv("JAVA_HOME")))
+  message(paste("PATH=", Sys.getenv("PATH")))
   post_process(
     "install.packages('rJava');library(rJava);.jinit();rstudioapi::restartSession()"
   )
