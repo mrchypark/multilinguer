@@ -30,17 +30,14 @@ winsetjavahome <- function(path = "") {
   if (path == "") {
     path <- fs::dir_ls(crt_path())
   }
-  if (length(path) == 0) {
-    stop("There's empty. Please install java first.")
-  }
   res <- setx("JAVA_HOME", path)
-  Sys.setenv("JAVA_HOME" = res)
+  Sys.setenv("JAVA_HOME" = path)
   paths <- paste0("%JAVA_HOME%\\bin;", Sys.getenv("path"))
   paths <- unique(strsplit(paths, ";")[[1]])
   paths <- paths[nchar(paths) > 0]
   paths <- paste0(paths, collapse = ";")
   res <- setx("path", paths)
-  Sys.setenv("PATH" = res)
+  Sys.setenv("PATH" = paths)
 }
 
 crt_path <- function() {
