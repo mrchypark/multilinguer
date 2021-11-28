@@ -1,3 +1,7 @@
+setx <- function(key = "", value = "") {
+  sys::exec_wait("setx", args = c(key, value), std_out = F)
+}
+
 set_java_home <- function(os, ...) {
   UseMethod("set_java_home")
 }
@@ -11,12 +15,16 @@ set_java_home.Darwinx64 <- function(os) {
 }
 
 set_java_home.Linuxx64 <- function(os) {
-  usethis::write_union("/etc/profile", "export JAVA_HOME=/usr/local/java")
-  usethis::write_union("/etc/profile", "export JRE_HOME=/usr/local/java/jre")
-  usethis::write_union("/etc/profile", "export PATH=$PATH:/usr/local/java/bin")
-  Sys.setenv("JAVA_HOME" = "/usr/local/java")
-  Sys.setenv("JRE_HOME" = "/usr/local/java/jre")
-  Sys.setenv("PATH" = "$PATH:/usr/local/java/bin")
+
+
+  jpath <- fs::dir_ls(crt_path(os))
+
+  usethis::write_union("/etc/profile", paste0("export JAVA_HOME=", jpath))
+  usethis::write_union("/etc/profile", paste0("export JRE_HOME=", jpath, "/jre"))
+  usethis::write_union("/etc/profile", paste0("export PATH=$PATH:", jpath,"/bin"))
+  Sys.setenv("JAVA_HOME" = paste0(jpath))
+  Sys.setenv("JRE_HOME" = paste0(jpath,"/jre"))
+  Sys.setenv("PATH" = paste0("$PATH:", jpath,"/bin"))
 }
 
 #' @importFrom usethis write_union
@@ -60,9 +68,7 @@ crt_path.Darwinx64 <- function(os) {
 }
 
 crt_path.Linuxx64 <- function(os) {
-  fs::path(fs::path_temp(), "corretto")
+  fs::path("/usr/local/corretto")
 }
 
-setx <- function(key = "", value = "") {
-  sys::exec_wait("setx", args = c(key, value), std_out = F)
-}
+

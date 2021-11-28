@@ -38,7 +38,5 @@ java_home_check.Darwinx64 <- function(os) {
 }
 
 java_home_check.Linuxx64 <- function(os) {
-  tar <- crt_path(os)
-  fs::dir_ls(tar)
-  system("ln -s jdk1.8.0_221/ java")
+  Sys.getenv("JAVA_HOME") != ""
 }
