@@ -15,8 +15,6 @@ set_java_home.Darwinx64 <- function(os) {
 }
 
 set_java_home.Linuxx64 <- function(os) {
-
-
   jpath <- fs::dir_ls(crt_path(os))
 
   usethis::write_union("/etc/profile", paste0("export JAVA_HOME=", jpath))
