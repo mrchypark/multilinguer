@@ -7,7 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/multilinguer)](https://CRAN.R-project.org/package=multilinguer)
-[![R-CMD-check](https://github.com/mrchypark/multilinguer/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/mrchypark/multilinguer/actions/workflows/check-standard.yaml)
+[![R-CMD-check](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://app.codecov.io/gh/mrchypark/multilinguer?branch=master)
 <!-- badges: end -->
