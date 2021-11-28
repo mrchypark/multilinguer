@@ -6,24 +6,20 @@
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version/multilinguer)](https://cran.r-project.org/package=multilinguer)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/mrchypark/multilinguer?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/multilinguer)
-[![Travis build
-status](https://travis-ci.org/mrchypark/multilinguer.svg?branch=master)](https://travis-ci.org/mrchypark/multilinguer)
+status](https://www.r-pkg.org/badges/version/multilinguer)](https://CRAN.R-project.org/package=multilinguer)
+[![R-CMD-check](https://github.com/mrchypark/multilinguer/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/mrchypark/multilinguer/actions/workflows/check-standard.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://codecov.io/gh/mrchypark/multilinguer?branch=master)
+coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://app.codecov.io/gh/mrchypark/multilinguer?branch=master)
 <!-- badges: end -->
 
 The goal of multilinguer is to provide install function
-[correto](https://aws.amazon.com/en/corretto/) which is one of
-distribution of jdk and many others like conda for R user.
+[correto](https://aws.amazon.com/corretto/) which is one of distribution
+of jdk and many others like conda for R user.
 
 ## Installation
 
 You can install the multilinguer from
-[cran](https://cran.r-project.org/web/packages/multilinguer/index.html)
-with:
+[cran](https://CRAN.R-project.org/package=multilinguer) with:
 
 ``` r
 install.packages("multilinguer")
