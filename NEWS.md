@@ -1,3 +1,5 @@
+# multilinguer 0.0.7
+
 # multilinguer 0.0.6
 
 * Add install_conda() with reticulate package.
