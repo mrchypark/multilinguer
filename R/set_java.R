@@ -11,7 +11,12 @@ set_java_home.Darwinx64 <- function(os) {
 }
 
 set_java_home.Linuxx64 <- function(os) {
-  invisible(os)
+  usethis::write_union("/etc/profile", "export JAVA_HOME=/usr/local/java")
+  usethis::write_union("/etc/profile", "export JRE_HOME=/usr/local/java/jre")
+  usethis::write_union("/etc/profile", "export PATH=$PATH:/usr/local/java/bin")
+  Sys.setenv("JAVA_HOME" = "/usr/local/java")
+  Sys.setenv("JRE_HOME" = "/usr/local/java/jre")
+  Sys.setenv("PATH" = "$PATH:/usr/local/java/bin")
 }
 
 #' @importFrom usethis write_union
@@ -55,7 +60,7 @@ crt_path.Darwinx64 <- function(os) {
 }
 
 crt_path.Linuxx64 <- function(os) {
-  fs::path(fs::path_home(), "corretto")
+  fs::path(fs::path_temp(), "corretto")
 }
 
 setx <- function(key = "", value = "") {

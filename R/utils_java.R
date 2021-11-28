@@ -12,7 +12,8 @@ java_available <- function() {
       std_err = F
     ) == 0,
     Windowsx64 = system("java -version") == 0,
-    Windowsx86 = system("java -version") == 0
+    Windowsx86 = system("java -version") == 0,
+    Linuxx64 = system("java -version") == 0
   )
 }
 
@@ -34,4 +35,10 @@ java_home_check.Darwinx64 <- function(os) {
                  "-V",
                  std_out = F,
                  std_err = F) == 0
+}
+
+java_home_check.Linuxx64 <- function(os) {
+  tar <- crt_path(os)
+  fs::dir_ls(tar)
+  system("ln -s jdk1.8.0_221/ java")
 }
