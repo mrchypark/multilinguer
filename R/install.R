@@ -35,15 +35,11 @@ install_miniconda <- install_conda
 #' @export
 install_java <- function() {
   os <-  get_os()
-  if (class(os) ==  "Linuxx64") {
-
-  } else {
-    dest <- crt_dest_loc()
-    java_download(os, dest)
-    loc <- crt_path(os)
-    crt_unc(os, dest, exdir = loc)
-    set_java_home(os)
-  }
+  dest <- crt_dest_loc()
+  java_download(os, dest)
+  loc <- crt_path(os)
+  crt_unc(os, dest, exdir = loc)
+  set_java_home(os)
 
   post_process(
     "install.packages('rJava', type = 'binary');library(rJava);.jinit();rstudioapi::restartSession()"
