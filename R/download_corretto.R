@@ -3,53 +3,36 @@
 #' windows x64 is for java11 x64
 #' windows x86 is for java8 x86
 #' mac is for java11 x64
+#' linux is for java11 x64
 #'
-#' @param os Type of OS
-#' @param dest where to download
+#' @param dest target path and file name.
 #' @importFrom utils download.file
 #' @export
-java_download <- function(os, dest){
-  UseMethod("java_download")
-}
-
-java_download.default <- function(os){
-  stop("no method for ", class(os)[1L])
-}
-
-java_download.Windowsx86 <- function(os, dest = crt_dest_loc()){
-  tar <- "https://corretto.aws/downloads/latest/amazon-corretto-8-x86-windows-jdk.zip"
-  download.file(tar, destfile = dest, mode = "wb")
-}
-
-java_download.Windowsx64 <- function(os, dest = crt_dest_loc()){
-  tar <- "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
-  download.file(tar, destfile = dest, mode = "wb")
-}
-
-java_download.Darwinx64 <- function(os, dest = crt_dest_loc()){
-  tar <- "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.tar.gz"
-  download.file(tar, destfile = dest)
-}
-
-java_download.Linuxx64 <- function(os, dest = crt_dest_loc()){
-  tar <- "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
-  download.file(tar, destfile = dest)
-}
-
-
-
-#' @importFrom fs path path_temp path_home
-crt_dest_loc <- function() {
+corretto_download <- function(dest = "") {
   os <- get_os()
-  return(switch(
-    class(os),
-    Windowsx86 = fs::path(fs::path_temp(), "crt.zip"),
-    Windowsx64 = fs::path(fs::path_temp(), "crt.zip"),
-    Darwinx64 = fs::path(fs::path_temp(), "crt.tar.gz"),
-    Linuxx64 = fs::path(fs::path_temp(), "crt.tar.gz"),
-    message("not support os yet")
-  ))
+  dlmode <- "w"
+  if (grepl("Window", os)) {
+    if (grepl("64", os)) {
+      tar <-
+        "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
+    } else {
+      tar <-
+        "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
+    }
+    dlmode <- "wb"
+  } else if (grepl("Darwin", os)) {
+    tar <-
+      "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.tar.gz"
+  } else if (grepl("Linux", os)) {
+    tar <-
+      "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
+  } else {
+    stop(paste0("Your OS not supported:", get_os()))
+  }
+  if (dest == "") {
+    dest <- fs::path(fs::path_temp(), "corretto.z")
+  }
+  download.file(tar, destfile = dest, mode = dlmode)
+  return(dest)
 }
-
-
 

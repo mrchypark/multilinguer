@@ -4,11 +4,9 @@
 \alias{crt_unc}
 \title{uncompress corretto source}
 \usage{
-crt_unc(os, ...)
+crt_unc(...)
 }
 \arguments{
-\item{os}{system os}
-
 \item{...}{extra param}
 }
 \description{

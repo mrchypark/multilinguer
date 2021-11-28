@@ -9,3 +9,6 @@ java_available()
 \description{
 java available check
 }
+\examples{
+ java_available()
+}

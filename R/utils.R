@@ -1,13 +1,9 @@
 get_os <- function(){
-  os <- "os_class"
-  bits <- Sys.info()["machine"]
-  if (grepl("x86", bits) & grepl("64", bits)) {
-    bits <- "x64"
-  }
-  class(os) <- paste0(Sys.info()["sysname"], as.character(bits))
-  return(os)
+  return(paste0(Sys.info()["sysname"], Sys.info()["machine"]))
 }
 
+## command for macos
+#################################
 system_sudo <- function(password, command){
   cmd <- paste0("echo ", password," | sudo -S ", command)
   system(cmd, ignore.stderr = T)
@@ -17,6 +13,7 @@ system_sudo_chk <- function(password, command){
   cmd <- paste0("echo ", password," | sudo -S ", command)
   system(cmd, ignore.stderr = T)
 }
+#################################
 
 is_rstudio <- function() {
   (Sys.getenv("RSTUDIO") == "1") && !nzchar(Sys.getenv("RSTUDIO_TERM"))
