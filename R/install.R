@@ -12,9 +12,7 @@
 #' @export
 install_conda <- function() {
   message("If you want to install with params, please use reticulate package diractly.")
-  post_process(
-    "install.packages('reticulate', type = 'binary');reticulate::install_miniconda()"
-  )
+  post_process("install.packages('reticulate');reticulate::install_miniconda()")
 }
 
 #' @rdname install_conda
