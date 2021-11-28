@@ -34,7 +34,7 @@ install_miniconda <- install_conda
 #' }
 #' @export
 install_java <- function() {
-  dest <- corretto_download()
+  dest <- download_corretto()
   loc <- crt_path()
   crt_unc(dest, exdir = loc)
   set_java_home()

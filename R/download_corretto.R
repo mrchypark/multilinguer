@@ -8,7 +8,7 @@
 #' @param dest target path and file name.
 #' @importFrom utils download.file
 #' @export
-corretto_download <- function(dest = "") {
+download_corretto <- function(dest = "") {
   os <- get_os()
   dlmode <- "w"
   if (grepl("Window", os)) {

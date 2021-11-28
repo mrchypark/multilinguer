@@ -40,12 +40,23 @@ winsetjavahome <- function(path = "") {
   Sys.setenv("PATH" = paths)
 }
 
+
 crt_path <- function() {
   if (grepl("Darwin", get_os())) {
     fs::path("/Library/Java/JavaVirtualMachines/")
   } else {
-    fs::path(fs::path_home(), ".corretto")
+    if (is_ascii(fs::path_home())) {
+      fs::path(fs::path_home(), ".corretto")
+    } else {
+      fs::path("c://multilinguer/.corretto")
+    }
+
   }
 }
 
-
+## copy from xfun package
+is_ascii <- function(x) {
+  out = !is.na(iconv(x, to = "ascii"))
+  out[is.na(x)] = NA
+  out
+}
