@@ -1,3 +1,5 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("install java and check", {
+  install_jdk()
+  install.packages("rJava", repos = "https://cloud.r-project.org")
+  expect_silent(rJava::.jinit())
 })
