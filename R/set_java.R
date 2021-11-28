@@ -66,7 +66,7 @@ crt_path.Darwinx64 <- function(os) {
 }
 
 crt_path.Linuxx64 <- function(os) {
-  fs::path("/usr/local/corretto")
+  fs::path(fs::path_home(), "corretto")
 }
 
 
