@@ -45,13 +45,21 @@ crt_path <- function() {
   if (grepl("Darwin", get_os())) {
     fs::path("/Library/Java/JavaVirtualMachines/")
   } else {
-    if (is_ascii(fs::path_home())) {
-      fs::path(fs::path_home(), ".corretto")
+    tar <- fs::path_home()
+    if (is_ascii(tar) && chk_homedir_fine(tar)) {
+      fs::path(tar, ".corretto")
     } else {
       fs::path("c://multilinguer/.corretto")
     }
-
   }
+}
+
+chk_homedir_fine <- function(path){
+  res <- try(dir.create(path), silent = T)
+  if (class(res) == "try-error") {
+    return(FALSE)
+  }
+  return(TRUE)
 }
 
 ## copy from xfun package
