@@ -30,12 +30,12 @@ download_corretto <- function(dest = "") {
     stop(paste0("Your OS not supported:", get_os()))
   }
   if (dest == "") {
-    tar <- fs::path_temp()
-    if (chk_dir_fine(tar)) {
-      dest <- fs::path(fs::path_temp(), "corretto.z")
+    path <- fs::path_temp()
+    if (chk_dir_fine(path)) {
+      dest <- fs::path(fs::path_temp(), "crt.z")
     } else {
       dir.create("c://multilinguer/")
-      dest <- fs::path("c://multilinguer/corretto.z")
+      dest <- fs::path("c://multilinguer/crt.z")
     }
   }
   download.file(tar, destfile = dest, mode = dlmode)
