@@ -31,6 +31,14 @@ post_process <- function(command) {
   }
 }
 
+chk_dir_fine <- function(path){
+  res <- try(dir.create(path), silent = T)
+  if (class(res) == "try-error") {
+    return(FALSE)
+  }
+  return(TRUE)
+}
+
 check_package <- function(package_name) {
   pack <- fs::dir_ls(.libPaths())
   pack <- unique(sapply(strsplit(pack, "/"), function(x) x[length(x)]))

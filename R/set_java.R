@@ -46,20 +46,12 @@ crt_path <- function() {
     fs::path("/Library/Java/JavaVirtualMachines/")
   } else {
     tar <- fs::path_home()
-    if (is_ascii(tar) && chk_homedir_fine(tar)) {
+    if (is_ascii(tar) && chk_dir_fine(tar)) {
       fs::path(tar, ".corretto")
     } else {
       fs::path("c://multilinguer/.corretto")
     }
   }
-}
-
-chk_homedir_fine <- function(path){
-  res <- try(dir.create(path), silent = T)
-  if (class(res) == "try-error") {
-    return(FALSE)
-  }
-  return(TRUE)
 }
 
 ## copy from xfun package
