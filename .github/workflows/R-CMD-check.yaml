@@ -57,6 +57,10 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v1
 
+      - name: Deploy package
+        run: |
+          Rscript -e 'Sys.info()'
+
       - name: Show testthat output
         if: always()
         run: find check -name 'testthat.Rout*' -exec cat '{}' \; || true

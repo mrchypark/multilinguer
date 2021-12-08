@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/multilinguer)](https://CRAN.R-project.org/package=multilinguer)
 [![R-CMD-check](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://app.codecov.io/gh/mrchypark/multilinguer?branch=master)
+[![R-CMD-check](https://github.com/mrchypark/multilinguer/workflows/R-CMD-check/badge.svg)](https://github.com/mrchypark/multilinguer/actions)
 <!-- badges: end -->
 
 The goal of multilinguer is to provide install function [ correto](https://aws.amazon.com/corretto/) which is one of distribution of jdk and many others like conda for R user.
