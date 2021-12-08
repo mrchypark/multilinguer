@@ -32,6 +32,15 @@
         "test",
         "bug"
       ]
+    },
+    {
+      "login": "Minseok-choi97",
+      "name": "Minseok-choi97",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80507582?v=4",
+      "profile": "https://github.com/Minseok-choi97",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
