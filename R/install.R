@@ -26,7 +26,7 @@ install_miniconda <- install_conda
 #' Case of `MacOS`, remove all java and reinstall `corretto` version 11.
 #'
 #'
-#' @param force
+#' @param force force install when is TRUE. Default is FALSE.
 #' @examples
 #' \dontrun{
 #'   install_java()

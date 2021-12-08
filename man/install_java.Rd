@@ -9,6 +9,9 @@ install_java(force = FALSE)
 
 install_jdk(force = FALSE)
 }
+\arguments{
+\item{force}{force install when is TRUE. Default is FALSE.}
+}
 \description{
 install \code{openjdk} which is one of openjdk(java) distro.
 Case of \code{MacOS}, remove all java and reinstall \code{corretto} version 11.
