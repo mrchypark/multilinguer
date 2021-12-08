@@ -5,9 +5,9 @@
 \alias{install_jdk}
 \title{install \code{java}}
 \usage{
-install_java()
+install_java(force = FALSE)
 
-install_jdk()
+install_jdk(force = FALSE)
 }
 \description{
 install \code{openjdk} which is one of openjdk(java) distro.

@@ -14,3 +14,9 @@ java_available <- function() {
     system("java -version") == 0
   }
 }
+
+java_ok_message <- function() {
+  message("java available!")
+  message("if you want to reinstall, with `force = TRUE`.")
+  message("JAVA_HOME=", Sys.getenv("JAVA_HOME"))
+}

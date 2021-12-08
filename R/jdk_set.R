@@ -6,7 +6,6 @@ set_java_home <- function(path) {
   if (missing(path)) {
     path <- fs::dir_ls(jdk_loc())
   }
-
   if (grepl("Windows", get_os())) {
     winsetjavahome(path)
   } else if (grepl("Linux", get_os())) {
@@ -46,9 +45,9 @@ jdk_loc <- function() {
   } else {
     tar <- fs::path_home()
     if (is_ascii(tar) && chk_dir_fine(tar)) {
-      fs::path(tar, ".corretto")
+      fs::path(tar, "java")
     } else {
-      fs::path("c://multilinguer/.corretto")
+      fs::path("c://multilinguer/java")
     }
   }
 }
