@@ -1,6 +1,6 @@
 # multilinguer <img src="man/figures/logo.png" align="right" height=140/>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- badges: start -->
@@ -60,6 +60,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://blogik.netlify.app/"><img src="https://avatars.githubusercontent.com/u/26772420?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongik Kim</b></sub></a><br /><a href="#platform-SeongIkKim" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://github.com/HeoJongWon"><img src="https://avatars.githubusercontent.com/u/37110949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HeoJongWon</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/issues?q=author%3AHeoJongWon" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/jamesleeeee"><img src="https://avatars.githubusercontent.com/u/95525262?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jamesleeeee</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/commits?author=jamesleeeee" title="Tests">⚠️</a> <a href="https://github.com/mrchypark/multilinguer/issues?q=author%3Ajamesleeeee" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://daeun-computer-uneasy.tistory.com/"><img src="https://avatars.githubusercontent.com/u/62705839?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daeun Lee</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/issues?q=author%3Adaeunni" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
