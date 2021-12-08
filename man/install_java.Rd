@@ -10,7 +10,7 @@ install_java()
 install_jdk()
 }
 \description{
-install \code{corretto} which is one of openjdk(java) distro.
+install \code{openjdk} which is one of openjdk(java) distro.
 Case of \code{MacOS}, remove all java and reinstall \code{corretto} version 11.
 }
 \examples{

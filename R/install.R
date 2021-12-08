@@ -22,7 +22,7 @@ install_miniconda <- install_conda
 #' install `java`
 #'
 #' @description
-#' install `corretto` which is one of openjdk(java) distro.
+#' install `openjdk` which is one of openjdk(java) distro.
 #' Case of `MacOS`, remove all java and reinstall `corretto` version 11.
 #'
 #' @examples
@@ -32,10 +32,10 @@ install_miniconda <- install_conda
 #' }
 #' @export
 install_java <- function() {
-  dest <- download_corretto()
-  loc <- crt_path()
+  dest <- jdk_download()
+  loc <- jdk_loc()
   message(paste("JDK will located at", loc))
-  crt_unc(dest, exdir = loc)
+  jdk_unc(dest, exdir = loc)
   set_java_home()
   message(paste("ENV will set"))
   message(paste("JAVA_HOME=", Sys.getenv("JAVA_HOME")))
