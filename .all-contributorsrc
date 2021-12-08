@@ -1,0 +1,70 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "SeongIkKim",
+      "name": "Seongik Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26772420?v=4",
+      "profile": "https://blogik.netlify.app/",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "HeoJongWon",
+      "name": "HeoJongWon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37110949?v=4",
+      "profile": "https://github.com/HeoJongWon",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "jamesleeeee",
+      "name": "jamesleeeee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/95525262?v=4",
+      "profile": "https://github.com/jamesleeeee",
+      "contributions": [
+        "test",
+        "bug"
+      ]
+    },
+    {
+      "login": "Minseok-choi97",
+      "name": "Minseok-choi97",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80507582?v=4",
+      "profile": "https://github.com/Minseok-choi97",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "daeunni",
+      "name": "Daeun Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62705839?v=4",
+      "profile": "https://daeun-computer-uneasy.tistory.com/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "bongho",
+      "name": "bono",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30528502?v=4",
+      "profile": "https://github.com/bongho",
+      "contributions": [
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "multilinguer",
+  "projectOwner": "mrchypark",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
