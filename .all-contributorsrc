@@ -50,6 +50,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "bongho",
+      "name": "bono",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30528502?v=4",
+      "profile": "https://github.com/bongho",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
