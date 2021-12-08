@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "SeongIkKim",
+      "name": "Seongik Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26772420?v=4",
+      "profile": "https://blogik.netlify.app/",
+      "contributions": [
+        "platform"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "multilinguer",
+  "projectOwner": "mrchypark",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
