@@ -55,11 +55,11 @@ jobs:
         with:
           extra-packages: rcmdcheck
 
-      - uses: r-lib/actions/check-r-package@v1
-
-      - name: Deploy package
+      - name: Print Os info
         run: |
           Rscript -e 'Sys.info()'
+
+      - uses: r-lib/actions/check-r-package@v1
 
       - name: Show testthat output
         if: always()
