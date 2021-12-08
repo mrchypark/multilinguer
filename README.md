@@ -1,10 +1,6 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # multilinguer <img src="man/figures/logo.png" align="right" height=140/>
 
 <!-- badges: start -->
-
 [![CRAN
 status](https://www.r-pkg.org/badges/version/multilinguer)](https://CRAN.R-project.org/package=multilinguer)
 [![R-CMD-check](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml)
@@ -26,10 +22,10 @@ install.packages("multilinguer")
 ```
 
 You can install the developing version of multilinguer from
-[gitlab](https://gitlab.com/mrchypark/multilinguer) with:
+[github](https://github.com/mrchypark/multilinguer) with:
 
 ``` r
-remotes::install_gitlab("mrchypark/multilinguer")
+remotes::install_github("mrchypark/multilinguer")
 ```
 
 ## Example
