@@ -22,6 +22,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "jamesleeeee",
+      "name": "jamesleeeee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/95525262?v=4",
+      "profile": "https://github.com/jamesleeeee",
+      "contributions": [
+        "test",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
