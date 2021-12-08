@@ -41,6 +41,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "daeunni",
+      "name": "Daeun Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62705839?v=4",
+      "profile": "https://daeun-computer-uneasy.tistory.com/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
