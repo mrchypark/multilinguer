@@ -5,12 +5,15 @@
 \alias{install_jdk}
 \title{install \code{java}}
 \usage{
-install_java()
+install_java(force = FALSE)
 
-install_jdk()
+install_jdk(force = FALSE)
+}
+\arguments{
+\item{force}{force install when is TRUE. Default is FALSE.}
 }
 \description{
-install \code{corretto} which is one of openjdk(java) distro.
+install \code{openjdk} which is one of openjdk(java) distro.
 Case of \code{MacOS}, remove all java and reinstall \code{corretto} version 11.
 }
 \examples{

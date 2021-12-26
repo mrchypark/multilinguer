@@ -12,7 +12,7 @@ coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge
 <!-- badges: end -->
 
 The goal of multilinguer is to provide install function
-[correto](https://aws.amazon.com/corretto/) which is one of distribution
+[corretto](https://aws.amazon.com/corretto/) which is one of distribution
 of jdk and many others like conda for R user.
 
 ## Installation
@@ -44,7 +44,7 @@ install_java()
 ## java for mac
 
 rJava package on MacOS, only work with Administrator privileges. So
-install\_java() function request you MacOS password.
+`install_java()` function request you MacOS password.
 
 ![](https://user-images.githubusercontent.com/6179259/73519641-fbbaa700-4444-11ea-9f52-5c3941040506.png)
 
