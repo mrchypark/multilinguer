@@ -56,7 +56,9 @@ install_jdk <- function(path = jdk_path(),
     #     system('killall rstudio')
     # else
     #   usethis::ui_todo("Plase shutdown for apply the settings.")
-    usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
+    if (!grepl("Darwin", get_os())) {
+      usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
+    }
   } else {
     jdk_installer_unc(installer, path)
     usethis::ui_info("Jdk has been successfully installed at {usethis::ui_path(path)}")
@@ -112,8 +114,16 @@ jdk_installer_run <- function(installer) {
   if (ext == "msi") {
     runner <- shell
   }
+  if (grepl("Darwin", get_os())) {
+    runner <- mac_runner
+  }
   status <- runner(installer)
   status
+}
+
+mac_runner <- function(installer) {
+  pw <- ask_password()
+  system_sudo(pw, paste0("installer -pkg ", installer, " -target /Applications"))
 }
 
 jdk_installer_unc <- function(installer, path) {
@@ -138,7 +148,7 @@ jdk_path <- function() {
 
 jdk_path_default <- function() {
   if (is_osx()) {
-    return(path.expand("~/Library/Java/JavaVirtualMachines/"))
+    return(path.expand("/Library/Java/JavaVirtualMachines/"))
   }
 
   # otherwise, use rappdirs default

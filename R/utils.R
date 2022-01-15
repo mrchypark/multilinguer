@@ -75,6 +75,23 @@ system_sudo_chk <- function(password, command){
   cmd <- paste0("echo ", password," | sudo -S ", command)
   system(cmd, ignore.stderr = T)
 }
+
+ask_password <- function(){
+  pw <- askpass::askpass("Please enter your MacOS password for install java:")
+  if (is.null(pw)) {
+    usethis::ui_stop("User cancel on to enter password.")
+  }
+  chk <- system_sudo_chk(pw, "echo") == 0
+  while (!chk) {
+    print("Incorrect Password.")
+    pw <- askpass::askpass("Please enter EXACT MacOS password:")
+    if (is.null(pw)) {
+      usethis::ui_stop("User cancel on to enter password.")
+    }
+    chk <- system_sudo_chk(pw, "echo") == 0
+  }
+  pw
+}
 #################################
 
 #' @importFrom rstudioapi restartSession
