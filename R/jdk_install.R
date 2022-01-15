@@ -62,6 +62,7 @@ install_jdk <- function(path = jdk_path(),
   } else {
     jdk_installer_unc(installer, path)
     usethis::ui_info("Jdk has been successfully installed at {usethis::ui_path(path)}")
+    usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
     return(path)
   }
 }
