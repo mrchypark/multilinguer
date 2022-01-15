@@ -71,8 +71,8 @@ system_sudo <- function(password, command){
   system(cmd, ignore.stderr = T)
 }
 
-system_sudo_chk <- function(password, command){
-  cmd <- paste0("echo ", password," | sudo -S ", command)
+system_sudo_chk <- function(password){
+  cmd <- paste0("echo ", password," | sudo -S echo")
   system(cmd, ignore.stderr = T)
 }
 
@@ -81,14 +81,14 @@ ask_password <- function(){
   if (is.null(pw)) {
     usethis::ui_stop("User cancel on to enter password.")
   }
-  chk <- system_sudo_chk(pw, "echo") == 0
+  chk <- system_sudo_chk(pw) == 0
   while (!chk) {
     print("Incorrect Password.")
     pw <- askpass::askpass("Please enter EXACT MacOS password:")
     if (is.null(pw)) {
       usethis::ui_stop("User cancel on to enter password.")
     }
-    chk <- system_sudo_chk(pw, "echo") == 0
+    chk <- system_sudo_chk(pw) == 0
   }
   pw
 }
