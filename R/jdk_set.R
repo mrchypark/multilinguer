@@ -17,12 +17,7 @@ set_java_home <- function(path = jdk_path()) {
 #' @importFrom usethis write_union
 #' @importFrom fs path path_home dir_ls
 set_javahome_linux <- function(path = jdk_path()) {
-  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JAVA_HOME=", path))
-  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JRE_HOME=", path, "/jre"))
-  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export PATH=$PATH:", path,"/bin"))
-  Sys.setenv("JAVA_HOME" = paste0(path))
-  Sys.setenv("JRE_HOME" = paste0(path,"/jre"))
-  Sys.setenv("PATH" = paste0("$PATH:", path,"/bin"))
+  # usethis::ui_todo("Add .profile file to {usethis::ui_path('export PATH=$PATH:{{path}}')}")
 }
 
 #' @importFrom usethis write_union
