@@ -38,7 +38,6 @@ install_jdk <- function(path = jdk_path(),
   install_jdk_preflight(path, force)
 
   # download the installer
-  data("jdk_list")
   usethis::ui_info("Installing JDK -- please wait a moment ...")
   if (is.null(url))
     usethis::ui_stop("Unsupported. please check {usethis::ui_code('jdk_list')}.")
@@ -77,7 +76,7 @@ uninstall_jdk <- remove_jdk
 
 
 jdk_installer_url <- function(version, gui) {
-  data("jdk_list")
+
   url <- getOption("multilinguer.jdk.url")
   if (!is.null(url))
     return(url)
