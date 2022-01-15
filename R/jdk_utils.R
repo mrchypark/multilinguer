@@ -14,3 +14,6 @@ java_available <- function() {
     system("java -version") == 0
   }
 }
+
+
+jdk_available <- java_available

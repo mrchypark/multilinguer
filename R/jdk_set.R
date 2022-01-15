@@ -2,20 +2,21 @@ setx <- function(key = "", value = "") {
   sys::exec_wait("setx", args = c(key, value), std_out = F)
 }
 
-set_java_home <- function(path = "") {
+unset <- function(key) {
+  sys::exec_wait("REG", args = c("delete", "HKCU\\Environment", "/F", "/V", key), std_out = F)
+}
+
+set_java_home <- function(path = jdk_path()) {
   if (grepl("Windows", get_os())) {
-    winsetjavahome(path)
+    set_javahome_win(path)
   } else if (grepl("Linux", get_os())) {
-    linuxsetjavahome()
+    set_javahome_linux(path)
   }
 }
 
 #' @importFrom usethis write_union
 #' @importFrom fs path path_home dir_ls
-linuxsetjavahome <- function(path = "") {
-  if (path == "") {
-    path <- fs::dir_ls(crt_path())
-  }
+set_javahome_linux <- function(path = jdk_path()) {
   usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JAVA_HOME=", path))
   usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JRE_HOME=", path, "/jre"))
   usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export PATH=$PATH:", path,"/bin"))
@@ -26,13 +27,10 @@ linuxsetjavahome <- function(path = "") {
 
 #' @importFrom usethis write_union
 #' @importFrom fs path dir_ls
-winsetjavahome <- function(path = "") {
-  if (path == "") {
-    path <- fs::dir_ls(crt_path())
-  }
+set_javahome_win <- function(path = jdk_path()) {
   res <- setx("JAVA_HOME", path)
   Sys.setenv("JAVA_HOME" = path)
-  paths <- paste0("%JAVA_HOME%\\bin;", Sys.getenv("path"))
+  paths <- paste0("%JAVA_HOME%/bin;", Sys.getenv("path"))
   paths <- unique(strsplit(paths, ";")[[1]])
   paths <- paths[nchar(paths) > 0]
   paths <- paste0(paths, collapse = ";")
@@ -40,19 +38,10 @@ winsetjavahome <- function(path = "") {
   Sys.setenv("PATH" = paths)
 }
 
-
-crt_path <- function() {
-  if (grepl("Darwin", get_os())) {
-    fs::path("/Library/Java/JavaVirtualMachines/")
-  } else {
-    tar <- fs::path_home()
-    if (is_ascii(tar) && chk_dir_fine(tar)) {
-      fs::path(tar, ".corretto")
-    } else {
-      fs::path("c://multilinguer/.corretto")
-    }
-  }
+unset_javahome_win <- function(){
+  unset("JAVA_HOME")
 }
+
 
 ## copy from xfun package
 is_ascii <- function(x) {

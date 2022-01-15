@@ -10,3 +10,5 @@
 ^docs*
 ^\.github$
 R/.logo.R
+^.all-contributorsrc*
+^data-raw$

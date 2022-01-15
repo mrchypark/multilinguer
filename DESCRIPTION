@@ -17,11 +17,12 @@ RoxygenNote: 7.1.1
 Imports: 
     sys,
     fs,
+    rappdirs,
     usethis,
     askpass,
-    xml2,
-    rvest,
     rstudioapi
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)

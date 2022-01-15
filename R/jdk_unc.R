@@ -1,21 +1,6 @@
-#' uncompress corretto source
-#'
-#' @param ... extra param
-crt_unc <- function(...){
-  if (grepl("Darwin", get_os())) {
-    macunc(...)
-  } else if (grepl("Windows", get_os())) {
-    utils::unzip(...)
-  } else if (grepl("Linux", get_os())) {
-    utils::untar(...)
-  } else {
-    stop("no method for ", get_os())
-  }
-}
-
 #' @importFrom askpass askpass
 #' @importFrom fs path
-macunc <- function(file_path, exdir, ...){
+jdk_unc_formac <- function(file_path, exdir, ...){
   pw <- askpass::askpass("Please enter your MacOS password for install java:")
   chk <- system_sudo_chk(pw, "echo") == 0
   while (!chk) {
