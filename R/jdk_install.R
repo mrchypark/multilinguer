@@ -27,6 +27,9 @@ install_jdk <- function(path = jdk_path(),
 
   version <- as.character(version)
   run <- match.arg(tolower(run), c("ask", "yes", "no"))
+  if (is_linux()) {
+    gui <- FALSE
+  }
 
   if (!interactive()) {
     if (run == "ask") {
