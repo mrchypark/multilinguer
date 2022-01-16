@@ -18,14 +18,15 @@ set_java_home <- function(path = jdk_path()) {
 
 #' @importFrom usethis write_union
 set_javahome_linux <- function(path = jdk_path()) {
-  profile_path <- file.path(normalizePath(path.expand("~/"), winslash = "/", mustWork = FALSE), ".profile")
+  profile_path <- file.path(normalizePath(path.expand("~/"), winslash = "/", mustWork = FALSE), ".bashrc")
   environ_path <- file.path(normalizePath(path.expand("~/"), winslash = "/", mustWork = FALSE), ".Renviron")
-  usethis::write_union(profile_path, paste0("export JAVA_HOME=", path))
-  usethis::write_union(profile_path, paste0("export JRE_HOME=", path, "/jre"))
-  usethis::write_union(profile_path, paste0("export PATH=$PATH:", path,"/bin"))
-  usethis::write_union(environ_path, paste0("JAVA_HOME=", path))
-  usethis::write_union(environ_path, paste0("JRE_HOME=", path, "/jre"))
-  usethis::write_union(environ_path, paste0("PATH=$PATH:", path, "/bin"))
+  usethis::write_union(profile_path, paste0('export JAVA_HOME="', path, '"'))
+  paths <- Sys.getenv("PATH")
+  usethis::write_union(profile_path, paste0('export PATH="',paths,':$JAVA_HOME/bin"'))
+  usethis::write_union(environ_path, paste0('JAVA_HOME=', path))
+  usethis::write_union(environ_path, paste0('PATH=',paths,':', path,'/bin'))
+  Sys.setenv(JAVA_HOME = path)
+  Sys.setenv(PATH = paste0(paths,':', path,'/bin'))
 }
 
 set_javahome_win <- function(path = jdk_path()) {
