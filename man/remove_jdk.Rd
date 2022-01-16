@@ -15,6 +15,12 @@ uninstall_jdk(path = jdk_path())
 \description{
 Uninstall jdk from this package.
 }
+\examples{
+\dontrun{
+  remove_jdk()
+  uninstall_jdk()
+}
+}
 \seealso{
 Other jdk-installer: 
 \code{\link{install_jdk}()},

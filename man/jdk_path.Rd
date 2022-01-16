@@ -14,6 +14,10 @@ path is used. If you'd like to instead set your own path, you can set the
 \details{
 You need to make sure you have permission when setting the path with \code{MULTILINGUER_JDK_PATH}.
 }
+\examples{
+  jdk_path()
+
+}
 \seealso{
 Other jdk-installer: 
 \code{\link{install_jdk}()},
