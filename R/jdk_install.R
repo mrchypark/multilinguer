@@ -101,6 +101,11 @@ install_java <- install_jdk
 #'
 #' @param path The path in which jdk is installed.
 #'
+#' @examples
+#' \dontrun{
+#'   remove_jdk()
+#'   uninstall_jdk()
+#' }
 #' @family jdk-installer
 #' @export
 remove_jdk <- function(path = jdk_path()) {
@@ -190,6 +195,9 @@ jdk_installer_unc <- function(installer, path) {
 #' You need to make sure you have permission when setting the path with `MULTILINGUER_JDK_PATH`.
 #'
 #' @family jdk-installer
+#' @examples
+#'   jdk_path()
+#'
 #' @export
 jdk_path <- function() {
   Sys.getenv("MULTILINGUER_JDK_PATH", unset = jdk_path_default())
