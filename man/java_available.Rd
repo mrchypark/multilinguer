@@ -2,9 +2,12 @@
 % Please edit documentation in R/jdk_utils.R
 \name{java_available}
 \alias{java_available}
+\alias{jdk_available}
 \title{java available check}
 \usage{
 java_available()
+
+jdk_available()
 }
 \description{
 java available check

@@ -15,5 +15,6 @@ java_available <- function() {
   }
 }
 
+#' @rdname java_available
 #' @export
 jdk_available <- java_available

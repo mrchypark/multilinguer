@@ -114,26 +114,7 @@ chk_dir_fine <- function(path){
   return(TRUE)
 }
 
-check_package <- function(package_name) {
-  pack <- fs::dir_ls(.libPaths())
-  pack <- unique(sapply(strsplit(pack, "/"), function(x) x[length(x)]))
-  package_name %in% pack
-}
-
 ## https://stackoverflow.com/a/70670903
 file_extension <- function(filenames) {
   sub(pattern = "^(.*\\.|[^.]+)(?=[^.]*)", replacement = "", filenames, perl = TRUE)
-}
-
-is_rstudio <- function() {
-  exists("RStudio.Version", envir = globalenv())
-}
-
-is_rstudio_desktop <- function() {
-  if (!exists("RStudio.Version", envir = globalenv()))
-    return(FALSE)
-
-  RStudio.Version <- get("RStudio.Version", envir = globalenv())
-  version <- RStudio.Version()
-  identical(version$mode, "desktop")
 }

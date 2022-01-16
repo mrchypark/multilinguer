@@ -1,3 +1,23 @@
+#' Install `jdk`
+#'
+#' @description
+#' Install `openjdk` which is one of openjdk(java) distro.
+#' Case of `MacOS`, remove all java and reinstall `corretto` version 11.
+#'
+#' @param path String; The location where jdk is (or should be) installed. See
+#'   [jdk_path] for more details on the default path used by `multilinguer`.
+#' @param version String; Jdk version. Now only support "11". check inst/jdk.yaml.
+#' @param gui Boolean; Some jdk supports os native installer. User can use
+#'   the gui when in interactive mode and use `Windows` or `MacOS`.
+#' @param run c("ask","yes","no");If set "yes", installation proccess start. Default is "ask" to user.
+#' @param force Boolean; force install when is TRUE. Default is FALSE.
+#' @examples
+#' \dontrun{
+#'   install_java()
+#'   install_jdk()
+#' }
+#' @family jdk-installer
+#' @importFrom usethis ui_stop ui_warn ui_info ui_field ui_path ui_yeah ui_todo
 #' @export
 install_jdk <- function(path = jdk_path(),
                         version = "11",
@@ -66,12 +86,28 @@ install_jdk <- function(path = jdk_path(),
   }
 }
 
+#' @rdname install_jdk
+#' @family jdk-installer
+#' @export
+install_java <- install_jdk
+
+
+#' Remove Jdk
+#'
+#' Uninstall jdk from this package.
+#'
+#' @param path The path in which jdk is installed.
+#'
+#' @family jdk-installer
 #' @export
 remove_jdk <- function(path = jdk_path()) {
   unlink(path, recursive = TRUE)
   unset_javahome_win()
 }
 
+#' @rdname remove_jdk
+#' @family jdk-installer
+#' @export
 uninstall_jdk <- remove_jdk
 
 
@@ -142,6 +178,16 @@ jdk_installer_unc <- function(installer, path) {
   set_java_home(path_set)
 }
 
+#' jdk path
+#'
+#' The path to the Jdk installation to use. By default, an OS-specific
+#' path is used. If you'd like to instead set your own path, you can set the
+#' `MULTILINGUER_JDK_PATH` environment variable.
+#'
+#' You need to make sure you have permission when setting the path with `MULTILINGUER_JDK_PATH`.
+#'
+#' @family jdk-installer
+#' @export
 jdk_path <- function() {
   Sys.getenv("MULTILINGUER_JDK_PATH", unset = jdk_path_default())
 }

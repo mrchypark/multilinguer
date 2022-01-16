@@ -1,7 +1,9 @@
+#' @importFrom sys exec_wait
 setx <- function(key = "", value = "") {
   sys::exec_wait("setx", args = c(key, value), std_out = F)
 }
 
+#' @importFrom sys exec_wait
 unset <- function(key) {
   sys::exec_wait("REG", args = c("delete", "HKCU\\Environment", "/F", "/V", key), std_out = F)
 }
@@ -15,19 +17,17 @@ set_java_home <- function(path = jdk_path()) {
 }
 
 #' @importFrom usethis write_union
-#' @importFrom fs path path_home dir_ls
 set_javahome_linux <- function(path = jdk_path()) {
-  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JAVA_HOME=", path))
-  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export JRE_HOME=", path, "/jre"))
-  usethis::write_union(fs::path(fs::path_home(), ".profile"), paste0("export PATH=$PATH:", path,"/bin"))
-  sys::exec_wait("sh", args = c("-C",fs::path(fs::path_home(), ".profile")))
-  usethis::write_union(fs::path(fs::path_home(), ".Renviron"), paste0("JAVA_HOME=", path))
-  usethis::write_union(fs::path(fs::path_home(), ".Renviron"), paste0("JRE_HOME=", path, "/jre"))
-  usethis::write_union(fs::path(fs::path_home(), ".Renviron"), paste0("PATH=$PATH:", path, "/bin"))
+  profile_path <- file.path(normalizePath(path.expand("~/"), winslash = "/", mustWork = FALSE), ".profile")
+  environ_path <- file.path(normalizePath(path.expand("~/"), winslash = "/", mustWork = FALSE), ".Renviron")
+  usethis::write_union(profile_path, paste0("export JAVA_HOME=", path))
+  usethis::write_union(profile_path, paste0("export JRE_HOME=", path, "/jre"))
+  usethis::write_union(profile_path, paste0("export PATH=$PATH:", path,"/bin"))
+  usethis::write_union(environ_path, paste0("JAVA_HOME=", path))
+  usethis::write_union(environ_path, paste0("JRE_HOME=", path, "/jre"))
+  usethis::write_union(environ_path, paste0("PATH=$PATH:", path, "/bin"))
 }
 
-#' @importFrom usethis write_union
-#' @importFrom fs path dir_ls
 set_javahome_win <- function(path = jdk_path()) {
   res <- setx("JAVA_HOME", path)
   Sys.setenv("JAVA_HOME" = path)
