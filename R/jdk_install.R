@@ -147,6 +147,7 @@ jdk_installer_download <- function(url, force) {
   usethis::ui_info("Downloading {usethis::ui_path(url)}")
   status <- tryCatch(utils::download.file(url, destfile = installer, mode = "wb"), error = function(e) e, warning = function(w) w)
   if (status != 0) {
+    unlink(installer)
     usethis::ui_stop("download of jdk faild. status: {usethis::ui_code(status)}")
   }
 
