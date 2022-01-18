@@ -64,7 +64,7 @@ install_jdk <- function(path = jdk_path(),
   usethis::ui_info("Installing JDK -- please wait a moment ...")
   if (is.null(url))
     usethis::ui_stop("Unsupported. please check {usethis::ui_code('jdk_list')}.")
-  installer <- jdk_installer_download(url)
+  installer <- jdk_installer_download(url, force)
 
   if (gui) {
     jdk_installer_run(installer)
@@ -83,8 +83,11 @@ install_jdk <- function(path = jdk_path(),
     }
   } else {
     jdk_installer_unc(installer, path)
-    usethis::ui_info("Jdk has been successfully installed at {usethis::ui_path(path)}")
-    usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
+    usethis::ui_done("Jdk has been successfully installed at {usethis::ui_path(path)}")
+    usethis::ui_todo("Need to set environment variable {usethis::ui_code('JAVA_HOME')} and {usethis::ui_code('PATH')} for R environment.")
+    usethis::ui_code_block("JAVA_HOME={path}
+                            PATH={Sys.getenv('path')}:{path}/bin")
+    usethis::ui_todo("Need to RUN ")
     return(path)
   }
 }
@@ -136,9 +139,9 @@ jdk_installer_url <- function(version, gui) {
   jdk_list[[get_os()]][[version]][[is_interactive]]
 }
 
-jdk_installer_download <- function(url) {
+jdk_installer_download <- function(url, force) {
   installer <- normalizePath(file.path(tempdir(), basename(url)), winslash = "/", mustWork = FALSE)
-  if (file.exists(installer))
+  if (file.exists(installer) & !force)
     return(installer)
 
   usethis::ui_info("Downloading {usethis::ui_path(url)}")
