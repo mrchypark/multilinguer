@@ -22,30 +22,18 @@
     <loc>/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/install_conda.html</loc>
-  </url>
-  <url>
-    <loc>/reference/install_java.html</loc>
+    <loc>/reference/install_jdk.html</loc>
   </url>
   <url>
     <loc>/reference/java_available.html</loc>
   </url>
   <url>
-    <loc>/reference/jdk_download.html</loc>
-  </url>
-  <url>
-    <loc>/reference/jdk_unc.html</loc>
+    <loc>/reference/jdk_path.html</loc>
   </url>
   <url>
     <loc>/reference/multilinguer-package.html</loc>
   </url>
   <url>
-    <loc>/reference/node_download.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rust_download.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rustup.html</loc>
+    <loc>/reference/remove_jdk.html</loc>
   </url>
 </urlset>
