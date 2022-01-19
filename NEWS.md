@@ -1,3 +1,5 @@
+# multilinguer 0.2.1
+
 # multilinguer 0.2.0
 
 * Add gui option for windows and macos.
