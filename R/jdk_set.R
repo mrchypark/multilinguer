@@ -11,20 +11,7 @@ unset <- function(key) {
 set_java_home <- function(path = jdk_path()) {
   if (grepl("Windows", get_os())) {
     set_javahome_win(path)
-  } else if (grepl("Linux", get_os())) {
-    set_javahome_linux(path)
   }
-}
-
-#' @importFrom usethis write_union
-set_javahome_linux <- function(path = jdk_path()) {
-  environ_path <- file.path(normalizePath(path.expand("~/"), winslash = "/", mustWork = FALSE), ".Renviron")
-
-  paths <- Sys.getenv("PATH")
-  usethis::write_union(environ_path, paste0('JAVA_HOME=', path))
-  usethis::write_union(environ_path, paste0('PATH=',paths,':', path,'/bin'))
-  Sys.setenv(JAVA_HOME = path)
-  Sys.setenv(PATH = paste0(paths,':', path,'/bin'))
 }
 
 set_javahome_win <- function(path = jdk_path()) {
