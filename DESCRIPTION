@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Package: multilinguer
 Title: Gentle Language Installer for R User
 Version: 0.2.0
@@ -23,3 +24,29 @@ Imports:
     rstudioapi
 Depends: 
     R (>= 2.10)
+=======
+Package: multilinguer
+Title: Gentle Language Installer for R User
+Version: 0.1.0
+Authors@R: person(given = "Chanyub",
+             family = "Park",
+             role = c("aut","cre"),
+             email = "mrchypark@gmail.com",
+             comment = c(ORCID = "0000-0001-6474-2570"))
+Description: Provides install functions of other languages 
+             such as 'java', 'python' for Windows and MacOS.
+License: MIT + file LICENSE
+Encoding: UTF-8
+URL: https://github.com/mrchypark/multilinguer
+BugReports: https://github.com/mrchypark/multilinguer/issues
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    sys,
+    rappdirs,
+    usethis,
+    askpass,
+    rstudioapi
+Depends: 
+    R (>= 2.10)
+>>>>>>> feat/ref-all-for-jdk

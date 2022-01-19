@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ^LICENSE\.md$
 ^multilinguer\.Rproj$
 ^\.Rproj\.user$
@@ -11,3 +12,19 @@
 R/.logo.R
 ^.all-contributorsrc*
 ^data-raw$
+=======
+^LICENSE\.md$
+^multilinguer\.Rproj$
+^\.Rproj\.user$
+^appveyor\.yml$
+^README\.Rmd$
+^\.travis\.yml$
+^codecov\.yml$
+^.github*
+^pkgdown*
+^docs*
+^\.github$
+R/.logo.R
+^.all-contributorsrc*
+^data-raw$
+>>>>>>> feat/ref-all-for-jdk

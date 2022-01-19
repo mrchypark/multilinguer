@@ -1,6 +1,6 @@
 # multilinguer 0.2.0
 
-
+* Add gui option for windows and macos.
 
 # multilinguer 0.0.6
 
@@ -10,3 +10,4 @@
 
 * [hotfix] Fix download corretto link.
 * Add a `NEWS.md` file to track changes to the package.
+
