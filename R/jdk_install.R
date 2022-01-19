@@ -82,7 +82,7 @@ install_jdk <- function(path = jdk_path(),
       usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
     } else if (is_linux()) {
       usethis::ui_todo("Need to set environment variable {usethis::ui_code('JAVA_HOME')} and {usethis::ui_code('PATH')} as {usethis::ui_field('ROOT')}.")
-      usethis::ui_info("Add code below to profile file like {usethis::ui_field('/etc/profile')}.")
+      usethis::ui_info("Add code below to profile file like {usethis::ui_field('/etc/profile')} or {usethis::ui_field('/etc/bashrc')} .")
       usethis::ui_code_block("export JAVA_HOME={path}
                               export PATH=$PATH:$JAVA_HOME/bin")
       usethis::ui_todo("After apply environment variables and RUN code below.")
