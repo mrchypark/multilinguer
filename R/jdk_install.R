@@ -35,6 +35,9 @@ install_jdk <- function(path = jdk_path(),
     if (run == "ask") {
       usethis::ui_stop("Use {usethis::ui_code('multilinguer::install_jdk(run = \"yes\")')} to run installation on non-interactive environment.")
     }
+    if (identical(get_os(), "Darwinarm64")) {
+      usethis::ui_stop("MacOS M1(arm64) only support gui installer for now. Use {usethis::ui_code('multilinguer::install_jdk(gui = TURE)')}")
+    }
     gui <- FALSE
     usethis::ui_warn("gui parameter force change to FALSE on non-interactive environment.")
   }
