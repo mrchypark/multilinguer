@@ -1,0 +1,28 @@
+Windowsx86-64:
+  "11":
+    interactive: "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.msi"
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.zip"
+Windowsx86-32:
+  "11":
+    interactive: "https://corretto.aws/downloads/latest/amazon-corretto-11-x86-windows-jdk.msi"
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-x86-windows-jdk.zip"
+Darwinx86_64:
+  "11":
+    interactive: "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.pkg"
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-macos-jdk.tar.gz"
+Darwinarm64:
+  "11":
+    interactive: "https://cdn.azul.com/zulu/bin/zulu11.52.13-ca-jdk11.0.13-macosx_aarch64.dmg"
+    zip: "https://cdn.azul.com/zulu/bin/zulu11.52.13-ca-jdk11.0.13-macosx_aarch64.tar.gz"
+Linuxx86_64:
+  "11":
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
+Linuxarm64:
+  "11":
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-aarch64-linux-jdk.tar.gz"
+Linuxx86_32:
+  "11":
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz"
+Linuxarm32:
+  "11":
+    zip: "https://corretto.aws/downloads/latest/amazon-corretto-11-arm-linux-jdk.tar.gz"

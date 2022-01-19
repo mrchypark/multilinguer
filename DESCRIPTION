@@ -1,6 +1,6 @@
 Package: multilinguer
 Title: Gentle Language Installer for R User
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
@@ -17,9 +17,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     sys,
-    fs,
+    rappdirs,
     usethis,
     askpass,
-    xml2,
-    rvest,
     rstudioapi
+Depends: 
+    R (>= 2.10)

@@ -1,5 +1,3 @@
-
-
 #' java available check
 #'
 #' @export
@@ -17,10 +15,7 @@ java_available <- function() {
   }
 }
 
-java_ok_message <- function() {
-  message("java available!")
-  message("if you want to reinstall, with `force = TRUE`.")
-  message("JAVA_HOME=", Sys.getenv("JAVA_HOME"))
-}
-
+#' @rdname java_available
+#' @export
+jdk_available <- java_available
 

@@ -9,5 +9,5 @@
 ^pkgdown*
 ^docs*
 R/.logo.R
-.all-contributorsrc
-^cran-comments\.md$
+^.all-contributorsrc*
+^data-raw$
