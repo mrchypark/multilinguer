@@ -94,27 +94,9 @@ ask_password <- function(){
 }
 #################################
 
-#' @importFrom rstudioapi restartSession
-post_process <- function(command) {
-  if (is_rstudio()) {
-    rstudioapi::restartSession(command)
-  } else {
-     message(paste0(
-       "Please run command below in R console after restart session.\n",
-       command
-     ))
-  }
-}
-
-chk_dir_fine <- function(path){
-  res <- try(dir.create(path), silent = T)
-  if (class(res) == "try-error") {
-    return(FALSE)
-  }
-  return(TRUE)
-}
 
 ## https://stackoverflow.com/a/70670903
+
 file_extension <- function(filenames) {
   sub(pattern = "^(.*\\.|[^.]+)(?=[^.]*)", replacement = "", filenames, perl = TRUE)
 }

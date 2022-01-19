@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-^LICENSE\.md$
-^multilinguer\.Rproj$
-^\.Rproj\.user$
-^appveyor\.yml$
-^README\.Rmd$
-^README\.md$
-^codecov\.yml$
-^.github*
-^pkgdown*
-^docs*
-R/.logo.R
-^.all-contributorsrc*
-^data-raw$
-=======
 ^LICENSE\.md$
 ^multilinguer\.Rproj$
 ^\.Rproj\.user$
@@ -27,4 +12,3 @@ R/.logo.R
 R/.logo.R
 ^.all-contributorsrc*
 ^data-raw$
->>>>>>> feat/ref-all-for-jdk

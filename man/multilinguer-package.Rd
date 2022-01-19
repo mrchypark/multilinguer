@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Provides install functions of other languages such as 'java', 'python' for Windows and MacOS.
+Provides install functions of other languages such as 'java', 'python' for Windows and MacOS. (Trying to Linux or Solaris.)
 }
 \seealso{
 Useful links:
