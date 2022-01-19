@@ -1,5 +1,7 @@
 # multilinguer 0.2.1
 
+* Fix gui only for mac arm64 on jdk_install().
+
 # multilinguer 0.2.0
 
 * Add gui option for windows and macos.

@@ -185,8 +185,9 @@ jdk_installer_run <- function(installer) {
 }
 
 mac_runner <- function(installer) {
-  pw <- ask_password()
-  system_sudo(pw, paste0("installer -pkg ", installer, " -target /Applications"))
+  system(paste0("open ", installer))
+  # pw <- ask_password()
+  # system_sudo(pw, paste0("installer -pkg ", installer, " -target /Applications"))
 }
 
 jdk_installer_unc <- function(installer, path) {
