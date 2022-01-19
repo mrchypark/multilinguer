@@ -1,13 +1,14 @@
 Package: multilinguer
 Title: Gentle Language Installer for R User
-Version: 0.0.7
+Version: 0.1.1
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
 Description: Provides install functions of other languages 
-             such as 'java', 'python' for windows and macos.
+             such as 'java', 'python' for Windows and MacOS.
+             (Trying to Linux or Solaris.)
 License: MIT + file LICENSE
 Encoding: UTF-8
 URL: https://github.com/mrchypark/multilinguer
@@ -22,6 +23,3 @@ Imports:
     xml2,
     rvest,
     rstudioapi
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
