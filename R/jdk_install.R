@@ -69,27 +69,39 @@ install_jdk <- function(path = jdk_path(),
   if (gui) {
     jdk_installer_run(installer)
     usethis::ui_info("Jdk has been successfully installed with gui installer.")
-    # quit <- usethis::ui_yeah("Using jdk requires shutdown and restart rstudio or console. Are you sure you want to shutdown?")
-    # if (quit)
-    # ## https://stackoverflow.com/questions/38181415/how-to-non-interactively-quit-rstudio-gracefully#comment64998430_38181415
-    #   if (is_windows())
-    #     shell('taskkill /F /IM "rstudio.exe" /T ')
-    #   if (is_unix())
-    #     system('killall rstudio')
-    # else
-    #   usethis::ui_todo("Plase shutdown for apply the settings.")
-    if (!grepl("Darwin", get_os())) {
+
+    if (grepl("Windows", get_os())) {
       usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
+    ## TODO: support quit behavior?
+    ## quit_ask()
     }
   } else {
     jdk_installer_unc(installer, path)
     usethis::ui_done("Jdk has been successfully installed at {usethis::ui_path(path)}")
-    usethis::ui_todo("Need to set environment variable {usethis::ui_code('JAVA_HOME')} and {usethis::ui_code('PATH')} for R environment.")
-    usethis::ui_code_block("JAVA_HOME={path}
-                            PATH={Sys.getenv('path')}:{path}/bin")
-    usethis::ui_todo("Need to RUN ")
+    if (is_windows()) {
+      usethis::ui_todo("Plase all windows close and restart for apply the jdk setting.")
+    } else if (is_linux()) {
+      usethis::ui_todo("Need to set environment variable {usethis::ui_code('JAVA_HOME')} and {usethis::ui_code('PATH')} as {usethis::ui_field('ROOT')}.")
+      usethis::ui_info("Add code below to profile file like {usethis::ui_field('/etc/profile')}.")
+      usethis::ui_code_block("export JAVA_HOME={path}
+                              export PATH=$PATH:$JAVA_HOME/bin")
+      usethis::ui_todo("After apply environment variables and RUN code below.")
+      usethis::ui_code_block("sudo R CMD javareconf")
+    }
     return(path)
   }
+}
+
+quit_ask <- function(){
+  quit <- usethis::ui_yeah("Using jdk requires shutdown and restart rstudio or console. Are you sure you want to shutdown?")
+  if (quit)
+  ## https://stackoverflow.com/questions/38181415/how-to-non-interactively-quit-rstudio-gracefully#comment64998430_38181415
+    if (is_windows())
+      shell('taskkill /F /IM "rstudio.exe" /T ')
+    if (is_unix())
+      system('killall rstudio')
+  else
+    usethis::ui_todo("Plase shutdown for apply the settings.")
 }
 
 #' @rdname install_jdk
@@ -148,7 +160,7 @@ jdk_installer_download <- function(url, force) {
   status <- tryCatch(utils::download.file(url, destfile = installer, mode = "wb"), error = function(e) e, warning = function(w) w)
   if (status != 0) {
     unlink(installer)
-    usethis::ui_stop("download of jdk faild. status: {usethis::ui_code(status)}")
+    usethis::ui_stop("Download jdk installer failed. status: {usethis::ui_code(status)}")
   }
 
   installer
@@ -166,7 +178,10 @@ jdk_installer_run <- function(installer) {
     runner <- mac_runner
   }
   status <- runner(installer)
-  status
+  if (status != 0) {
+    unlink(installer)
+    usethis::ui_stop("Install jdk failed. status: {usethis::ui_code(status)}")
+  }
 }
 
 mac_runner <- function(installer) {
@@ -184,7 +199,11 @@ jdk_installer_unc <- function(installer, path) {
     unc <- jdk_unc_formac
   }
 
-  unc(installer,  exdir = path)
+  status <- unc(installer,  exdir = path)
+  if (status != 0) {
+    unlink(path)
+    usethis::ui_stop("Uncompress jdk failed. status: {usethis::ui_code(status)}")
+  }
   jdk_dir <- dir(jdk_path())
   path_set <- normalizePath(file.path(path, jdk_dir), winslash = "/", mustWork = FALSE)
   set_java_home(path_set)
