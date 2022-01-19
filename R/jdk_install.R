@@ -201,6 +201,7 @@ jdk_installer_unc <- function(installer, path) {
   }
 
   status <- unc(installer,  exdir = path)
+  print(status)
   if (status != 0) {
     unlink(path)
     usethis::ui_stop("Uncompress jdk failed. status: {usethis::ui_code(status)}")
