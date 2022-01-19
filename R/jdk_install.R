@@ -188,9 +188,12 @@ jdk_installer_run <- function(installer) {
 }
 
 mac_runner <- function(installer) {
-  system(paste0("open ", installer))
-  # pw <- ask_password()
-  # system_sudo(pw, paste0("installer -pkg ", installer, " -target /Applications"))
+  if (identical(get_os(), "Darwinarm64")) {
+    system(paste0("open ", installer))
+    return(0)
+  }
+  pw <- ask_password()
+  system_sudo(pw, paste0("installer -pkg ", installer, " -target /Applications"))
 }
 
 jdk_installer_unc <- function(installer, path) {
