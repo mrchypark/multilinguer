@@ -12,3 +12,5 @@
 R/.logo.R
 ^.all-contributorsrc*
 ^data-raw$
+^cran-comments\.md$
+^CRAN-SUBMISSION$

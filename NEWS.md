@@ -1,3 +1,15 @@
+# multilinguer 0.2.4
+
+* Fix invalid URLs on readme.
+
+# multilinguer 0.2.3
+
+* Fix readme for cran.
+
+# multilinguer 0.2.2
+
+* Rebuild document with roxygen2 7.2.1
+
 # multilinguer 0.2.1
 
 * Fix gui only for mac arm64 on jdk_install().

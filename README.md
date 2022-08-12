@@ -1,14 +1,13 @@
 # multilinguer <img src="man/figures/logo.png" align="right" height=140/>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- badges: start -->
-[![CRAN
-status](https://www.r-pkg.org/badges/version/multilinguer)](https://CRAN.R-project.org/package=multilinguer)
-[![R-CMD-check](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrchypark/multilinguer/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/mrchypark/multilinguer/branch/master/graph/badge.svg)](https://app.codecov.io/gh/mrchypark/multilinguer?branch=master)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/mrchypark/multilinguer/workflows/R-CMD-check/badge.svg)](https://github.com/mrchypark/multilinguer/actions)
+[![CRAN status](https://www.r-pkg.org/badges/version/multilinguer)](https://CRAN.R-project.org/package=multilinguer)
+[![runiverse-name](https://mrchypark.r-universe.dev/badges/:name)](https://mrchypark.r-universe.dev/)
+[![runiverse-package](https://mrchypark.r-universe.dev/badges/multilinguer)](https://mrchypark.r-universe.dev/ui#packages)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/multilinguer)](https://cran.r-project.org/package=multilinguer)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/multilinguer)](https://cran.r-project.org/package=multilinguer)
 <!-- badges: end -->
 
 The goal of multilinguer is to provide install function
@@ -17,18 +16,12 @@ of jdk and many others like conda for R user.
 
 ## Installation
 
-You can install the multilinguer from
-[cran](https://CRAN.R-project.org/package=multilinguer) with:
-
 ``` r
+# CRAN version
 install.packages("multilinguer")
-```
 
-You can install the developing version of multilinguer from
-[github](https://github.com/mrchypark/multilinguer) with:
-
-``` r
-remotes::install_github("mrchypark/multilinguer")
+# dev version on r-universe
+install.packages('multilinguer', repos = 'https://mrchypark.r-universe.dev')
 ```
 
 ## Example
@@ -41,13 +34,6 @@ install_conda()
 install_java()
 ```
 
-## java for mac
-
-rJava package on MacOS, only work with Administrator privileges. So
-`install_java()` function request you MacOS password.
-
-![](https://user-images.githubusercontent.com/6179259/73519641-fbbaa700-4444-11ea-9f52-5c3941040506.png)
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -58,7 +44,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://blogik.netlify.app/"><img src="https://avatars.githubusercontent.com/u/26772420?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongik Kim</b></sub></a><br /><a href="#platform-SeongIkKim" title="Packaging/porting to new platform">📦</a></td>
-    <td align="center"><a href="https://github.com/HeoJongWon"><img src="https://avatars.githubusercontent.com/u/37110949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HeoJongWon</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/issues?q=author%3AHeoJongWon" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/jamesleeeee"><img src="https://avatars.githubusercontent.com/u/95525262?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jamesleeeee</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/commits?author=jamesleeeee" title="Tests">⚠️</a> <a href="https://github.com/mrchypark/multilinguer/issues?q=author%3Ajamesleeeee" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Minseok-choi97"><img src="https://avatars.githubusercontent.com/u/80507582?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Minseok-choi97</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/issues?q=author%3AMinseok-choi97" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://daeun-computer-uneasy.tistory.com/"><img src="https://avatars.githubusercontent.com/u/62705839?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daeun Lee</b></sub></a><br /><a href="https://github.com/mrchypark/multilinguer/issues?q=author%3Adaeunni" title="Bug reports">🐛</a></td>
