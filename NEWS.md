@@ -1,5 +1,7 @@
 # multilinguer 0.2.3
 
+* Fix readme for cran.
+
 # multilinguer 0.2.2
 
 * Rebuild document with roxygen2 7.2.1
