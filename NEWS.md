@@ -1,5 +1,7 @@
 # multilinguer 0.2.4
 
+* Fix invalid URLs on readme.
+
 # multilinguer 0.2.3
 
 * Fix readme for cran.

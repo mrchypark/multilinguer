@@ -7,7 +7,7 @@
 [![runiverse-name](https://mrchypark.r-universe.dev/badges/:name)](https://mrchypark.r-universe.dev/)
 [![runiverse-package](https://mrchypark.r-universe.dev/badges/multilinguer)](https://mrchypark.r-universe.dev/ui#packages)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/multilinguer)](https://cran.r-project.org/package=multilinguer)
-[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/multilinguer)](https://cran.rstudio.com/package=multilinguer)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/multilinguer)](https://cran.r-project.org/package=multilinguer)
 <!-- badges: end -->
 
 The goal of multilinguer is to provide install function

@@ -2,4 +2,4 @@
 
 0 errors | 0 warnings | 1 note
 
-* Remove invalid URLs on readme.
+* Fix invalid URLs on readme from v0.2.3
