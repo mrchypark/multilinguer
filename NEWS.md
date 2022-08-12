@@ -1,3 +1,5 @@
+# multilinguer 0.2.2
+
 # multilinguer 0.2.1
 
 * Fix gui only for mac arm64 on jdk_install().
