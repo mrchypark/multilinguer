@@ -17,18 +17,12 @@ of jdk and many others like conda for R user.
 
 ## Installation
 
-You can install the multilinguer from
-[cran](https://CRAN.R-project.org/package=multilinguer) with:
-
 ``` r
+# CRAN version
 install.packages("multilinguer")
-```
 
-You can install the developing version of multilinguer from
-[github](https://github.com/mrchypark/multilinguer) with:
-
-``` r
-remotes::install_github("mrchypark/multilinguer")
+# dev version on r-universe
+install.packages('multilinguer', repos = 'https://mrchypark.r-universe.dev')
 ```
 
 ## Example
@@ -40,13 +34,6 @@ library(multilinguer)
 install_conda()
 install_java()
 ```
-
-## java for mac
-
-rJava package on MacOS, only work with Administrator privileges. So
-`install_java()` function request you MacOS password.
-
-![](https://user-images.githubusercontent.com/6179259/73519641-fbbaa700-4444-11ea-9f52-5c3941040506.png)
 
 ## Contributors ✨
 

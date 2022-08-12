@@ -1,5 +1,7 @@
 # multilinguer 0.2.2
 
+* Rebuild document with roxygen2 7.2.1
+
 # multilinguer 0.2.1
 
 * Fix gui only for mac arm64 on jdk_install().
