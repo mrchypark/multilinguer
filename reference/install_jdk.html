@@ -18,7 +18,7 @@ Case of MacOS, remove all java and reinstall corretto version 11."><meta propert
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">multilinguer</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.4</span>
       </span>
     </div>
 
@@ -55,21 +55,21 @@ Case of <code>MacOS</code>, remove all java and reinstall <code>corretto</code> 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">install_jdk</span><span class="op">(</span>
-  path <span class="op">=</span> <span class="fu"><a href="jdk_path.html">jdk_path</a></span><span class="op">(</span><span class="op">)</span>,
-  version <span class="op">=</span> <span class="st">"11"</span>,
-  gui <span class="op">=</span> <span class="cn">TRUE</span>,
-  run <span class="op">=</span> <span class="st">"ask"</span>,
-  force <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span>
-
-<span class="fu">install_java</span><span class="op">(</span>
-  path <span class="op">=</span> <span class="fu"><a href="jdk_path.html">jdk_path</a></span><span class="op">(</span><span class="op">)</span>,
-  version <span class="op">=</span> <span class="st">"11"</span>,
-  gui <span class="op">=</span> <span class="cn">TRUE</span>,
-  run <span class="op">=</span> <span class="st">"ask"</span>,
-  force <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">install_jdk</span><span class="op">(</span></span>
+<span>  path <span class="op">=</span> <span class="fu"><a href="jdk_path.html">jdk_path</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  version <span class="op">=</span> <span class="st">"11"</span>,</span>
+<span>  gui <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  run <span class="op">=</span> <span class="st">"ask"</span>,</span>
+<span>  force <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">install_java</span><span class="op">(</span></span>
+<span>  path <span class="op">=</span> <span class="fu"><a href="jdk_path.html">jdk_path</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  version <span class="op">=</span> <span class="st">"11"</span>,</span>
+<span>  gui <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  run <span class="op">=</span> <span class="st">"ask"</span>,</span>
+<span>  force <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -77,15 +77,24 @@ Case of <code>MacOS</code>, remove all java and reinstall <code>corretto</code> 
     <dl><dt>path</dt>
 <dd><p>String; The location where jdk is (or should be) installed. See
 <a href="jdk_path.html">jdk_path</a> for more details on the default path used by <code>multilinguer</code>.</p></dd>
+
+
 <dt>version</dt>
 <dd><p>String; Jdk version. Now only support "11". check inst/jdk.yaml.</p></dd>
+
+
 <dt>gui</dt>
 <dd><p>Boolean; Some jdk supports os native installer. User can use
 the gui when in interactive mode and use <code>Windows</code> or <code>MacOS</code>.</p></dd>
+
+
 <dt>run</dt>
 <dd><p>c("ask","yes","no");If set "yes", installation proccess start. Default is "ask" to user.</p></dd>
+
+
 <dt>force</dt>
 <dd><p>Boolean; force install when is TRUE. Default is FALSE.</p></dd>
+
 </dl></div>
     <div id="see-also">
     <h2>See also</h2>
@@ -99,10 +108,10 @@ the gui when in interactive mode and use <code>Windows</code> or <code>MacOS</co
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">install_java</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu">install_jdk</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">install_java</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">install_jdk</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -117,7 +126,7 @@ the gui when in interactive mode and use <code>Windows</code> or <code>MacOS</co
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
